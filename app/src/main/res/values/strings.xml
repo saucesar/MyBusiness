@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyBusiness</string>
+    <string name="login">Login</string>
+    <string name="senha">Senha</string>
+    <string name="lembrar">Lembrar-se</string>
+    <string name="botao_login">Login</string>
+
 </resources>
