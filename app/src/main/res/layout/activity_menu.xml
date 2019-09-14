@@ -4,15 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
     tools:context=".activities.ActivityMenu">
 
-
-    <Button
-        android:id="@+id/buttonProduto"
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Produto"/>
+        android:layout_gravity="center_horizontal">
+
+
+        <!-- Linha 1 -->
+        <TableRow android:layout_width="wrap_content">
+            <!-- Linha 1 coluna 1 -->
+            <Button
+                android:id="@+id/buttonProduto"
+                android:layout_width="90dp"
+                android:layout_height="64dp"
+                android:background="@drawable/icone_produtos" />
+
+            <!-- Linha 1 Coluna 2 -->
+            <Space android:layout_width="10dp"></Space>
+
+            <!--Linha 1 Coluna 3 -->
+            <Button
+                android:id="@+id/buttonProduto2"
+                android:layout_width="90dp"
+                android:layout_height="64dp"
+                android:background="@drawable/icone_produtos" />
+
+            <!--Linha 1 Coluna 4 -->
+            <Space android:layout_width="10dp"></Space>
+
+            <!--Linha 1 Coluna 5 -->
+            <Button
+                android:id="@+id/buttonProduto3"
+                android:layout_width="90dp"
+                android:layout_height="64dp"
+                android:background="@drawable/icone_produtos" />
+        </TableRow>
+
+        <!-- Linha 2 -->
+        <TableRow>
+            <!--Linha 2 Coluna 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Produto"></TextView>
+            <!--Linha 2 Coluna 2 -->
+            <Space android:layout_width="10dp"></Space>
+
+            <!--Linha 2 coluna 3 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Produto"></TextView>
+
+            <!--Linha 2 Coluna 4 -->
+            <Space android:layout_width="10dp"></Space>
+
+            <!--Linha 2 Coluna 5 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Produto"></TextView>
+
+        </TableRow>
+
+        <!-- Linha 3 -->
+        <TableRow>
+
+            <Button
+                android:id="@+id/buttonProduto1"
+                android:layout_width="76dp"
+                android:layout_height="64dp"
+                android:background="@drawable/icone_cliente" />
+
+
+        </TableRow>
+
+
+    </TableLayout>
 
 
 </LinearLayout>
