@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="bg_tela_login">#C1C2C0</color>
     <color name="bg_tela_login_menor">#C8052597</color>
+    <drawable name="bg_cadastra_produto_menor">#03A9F4</drawable>
 </resources>

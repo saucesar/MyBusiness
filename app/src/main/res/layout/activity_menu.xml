@@ -29,8 +29,8 @@
                 android:layout_height="90dp"
                 android:background="@drawable/icone_produtos"
                 android:gravity="bottom|center_horizontal"
-                android:text="Produto"
-                android:textSize="12sp"/>
+                android:text="@string/produto"
+                android:textSize="12sp" />
 
             <!-- Linha 1 Coluna 2 -->
             <Space android:layout_width="10dp"></Space>

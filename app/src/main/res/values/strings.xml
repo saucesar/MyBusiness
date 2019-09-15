@@ -4,5 +4,7 @@
     <string name="senha">Senha</string>
     <string name="lembrar">Lembrar-se</string>
     <string name="botao_login">Login</string>
+    <string name="produto">Produto</string>
+    <string name="formulario_nome">Nome do Produto</string>
 
 </resources>
