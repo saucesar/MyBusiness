@@ -12,7 +12,12 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:background="@color/bg_tela_login_menor"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
 
 
         <!-- Linha 1 -->
@@ -21,8 +26,11 @@
             <Button
                 android:id="@+id/buttonProduto"
                 android:layout_width="90dp"
-                android:layout_height="64dp"
-                android:background="@drawable/icone_produtos" />
+                android:layout_height="90dp"
+                android:background="@drawable/icone_produtos"
+                android:gravity="bottom|center_horizontal"
+                android:text="Produto"
+                android:textSize="12sp"/>
 
             <!-- Linha 1 Coluna 2 -->
             <Space android:layout_width="10dp"></Space>
@@ -31,8 +39,12 @@
             <Button
                 android:id="@+id/buttonProduto2"
                 android:layout_width="90dp"
-                android:layout_height="64dp"
-                android:background="@drawable/icone_produtos" />
+                android:layout_height="90dp"
+                android:background="@drawable/icone_venda"
+                android:gravity="bottom|center_horizontal"
+                android:text="Produto"
+                android:textSize="12sp"
+                />
 
             <!--Linha 1 Coluna 4 -->
             <Space android:layout_width="10dp"></Space>
@@ -41,49 +53,67 @@
             <Button
                 android:id="@+id/buttonProduto3"
                 android:layout_width="90dp"
-                android:layout_height="64dp"
-                android:background="@drawable/icone_produtos" />
+                android:layout_height="90dp"
+                android:background="@drawable/icone_produtos"
+                android:gravity="bottom|center_horizontal"
+                android:text="Produto"
+                android:textSize="12sp"/>
         </TableRow>
 
         <!-- Linha 2 -->
         <TableRow>
             <!--Linha 2 Coluna 1 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Produto"></TextView>
-            <!--Linha 2 Coluna 2 -->
-            <Space android:layout_width="10dp"></Space>
-
-            <!--Linha 2 coluna 3 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Produto"></TextView>
-
-            <!--Linha 2 Coluna 4 -->
-            <Space android:layout_width="10dp"></Space>
-
-            <!--Linha 2 Coluna 5 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Produto"></TextView>
+            <Space android:layout_height="10dp"></Space>
 
         </TableRow>
 
-        <!-- Linha 3 -->
+        <!-- Linha 3-->
         <TableRow>
 
+
+            <!--Linha 3 Coluna 1 -->
             <Button
                 android:id="@+id/buttonProduto1"
-                android:layout_width="76dp"
-                android:layout_height="64dp"
-                android:background="@drawable/icone_cliente" />
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/icone_cliente"
+                android:gravity="bottom|center_horizontal"
+                android:text="Cliente"
+                android:textSize="12sp"/>
 
+            <!--Linha 3 Coluna 2 -->
+            <Space android:layout_width="10dp"></Space>
+
+            <!--Linha 3 Coluna 3 -->
+            <Button
+                android:id="@+id/buttonProduto4"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/icone_cliente"
+                android:gravity="bottom|center_horizontal"
+                android:text="Cliente"
+                android:textSize="12sp"/>
+
+            <!--Linha 3 Coluna 3 -->
+            <Space android:layout_width="10dp"></Space>
+
+            <!--Linha 3 Coluna 4 -->
+            <Button
+                android:id="@+id/buttonProduto6"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/icone_cliente"
+                android:gravity="bottom|center_horizontal"
+                android:text="Cliente"
+                android:textSize="12sp"/>
+
+
+        </TableRow>
+
+        <!-- Linha 4 -->
+        <TableRow>
+            <!--Linha 4 Coluna 1 -->
+            <Space android:layout_height="10dp"></Space>
 
         </TableRow>
 
