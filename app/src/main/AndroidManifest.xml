@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity android:name=".activities.ActivityProduto"
-            android:label="Entrada em Produto"></activity>
+            android:label="Cadastro de Produto"></activity>
         <activity
             android:name=".activities.ActivityMenu"
             android:label="Menu" />

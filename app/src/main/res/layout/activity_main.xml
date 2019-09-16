@@ -32,7 +32,6 @@
                 android:id="@+id/textViewLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
                 android:text="@string/login"
                 android:textColor="@color/fontTelaLogin"
                 android:textSize="20sp" />
@@ -41,10 +40,8 @@
                 android:id="@+id/editTextLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
                 android:ems="10"
-                android:gravity="end"
-                android:inputType="textPassword" />
+                android:inputType="text" />
 
 
         </LinearLayout>

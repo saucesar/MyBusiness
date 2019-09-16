@@ -6,5 +6,6 @@
     <string name="botao_login">Login</string>
     <string name="produto">Produto</string>
     <string name="formulario_nome">Nome do Produto</string>
+    <string name="formulario_quantidade">Quantidade</string>
 
 </resources>
