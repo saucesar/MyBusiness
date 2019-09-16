@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="50dp"
+    android:paddingTop="50dp"
+    android:paddingRight="50dp"
+    android:paddingBottom="50dp"
+    tools:context=".activities.ActivityProduto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_tela_login_menor"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/formulario_nome"
+            android:textColor="@color/bg_cadastra_produto" />
+
+        <EditText
+            android:id="@+id/editTextNomeProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_cadastra_produto"
+            android:inputType="textPersonName"
+            android:textColor="@color/hint_cadastra_produto" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/bg_tela_login_menor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/relativeLayoutQuantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:id="@+id/textViewQuantidade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/formulario_quantidade"
+                    android:textColor="@color/bg_cadastra_produto" />
+
+                <EditText
+                    android:id="@+id/editTextQuantidadeProduto"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bg_cadastra_produto"
+                    android:inputType="numberSigned"
+                    android:maxLength="4" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/relativeLayoutData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/formulario_data"
+                    android:textColor="@color/bg_cadastra_produto" />
+
+                <EditText
+                    android:id="@+id/editTextDataEntradaProduto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bg_cadastra_produto"
+                    android:inputType="date"
+                    android:maxLength="10" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/bg_tela_login_menor" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/relativeLayoutPrecoCompra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:id="@+id/textViewPrecoCompra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/formulario_preco_compra"
+                    android:textColor="@color/bg_cadastra_produto" />
+
+                <EditText
+                    android:id="@+id/editTextPrecoCompra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bg_cadastra_produto"
+                    android:inputType="numberDecimal" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/relativeLayoutPrecoVenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/formulario_preco_venda"
+                    android:textColor="@color/bg_cadastra_produto" />
+
+                <EditText
+                    android:id="@+id/editTextPrecoVenda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bg_cadastra_produto"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/bg_tela_login_menor" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/relativeLayoutAtivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/formulario_produto_ativo"
+                    android:textColor="@color/bg_cadastra_produto"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/relativeLayoutSalvar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/formulario_botao_salvar" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

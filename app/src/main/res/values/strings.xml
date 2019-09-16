@@ -7,5 +7,11 @@
     <string name="produto">Produto</string>
     <string name="formulario_nome">Nome do Produto</string>
     <string name="formulario_quantidade">Quantidade</string>
+    <string name="formulario_data">Data da Entrada</string>
+    <string name="formulario_preco_compra">Preço de Compra</string>
+    <string name="formulario_preco_venda">Preço de Venda</string>
+    <string name="formulario_produto_ativo">Ativo</string>
+    <string name="formulario_botao_salvar">Salvar</string>
+
 
 </resources>
