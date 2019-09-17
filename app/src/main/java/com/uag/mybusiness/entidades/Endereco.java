@@ -2,8 +2,20 @@ package com.uag.mybusiness.entidades;
 
 public class Endereco {
     private String rua, numero, bairro, cidade, estado,cpfCliente;
+    private int id;
 
     public Endereco(String rua, String numero, String bairro, String cidade, String estado, String cpfCliente){
+        this.id = 0;
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cpfCliente = cpfCliente;
+    }
+
+    public Endereco(int id,String rua, String numero, String bairro, String cidade, String estado, String cpfCliente){
+        this.id = id;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;

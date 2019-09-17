@@ -3,7 +3,7 @@ package com.uag.mybusiness.entidades;
 import java.util.Date;
 
 public class Produto {
-    private long codigo;
+    private int id;
     private String nome;
     private int quantidade;
     private String dataEntrada;
@@ -11,16 +11,28 @@ public class Produto {
     private double precoVenda;
     private int ativo;
 
-    public Produto(){
-
+    public Produto(int id,String nome, int quantidade, String dataEntrada, double precoCompra,double precoVenda,int ativo){
+        this.id = id;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.dataEntrada = dataEntrada;
+        this.precoCompra = precoCompra;
+        this.precoVenda = precoVenda;
+        this.ativo = ativo;
     }
 
-    public long getCodigo() {
-        return codigo;
+    public Produto(String nome, int quantidade, String dataEntrada, double precoCompra,double precoVenda,int ativo){
+        this.id = 0;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.dataEntrada = dataEntrada;
+        this.precoCompra = precoCompra;
+        this.precoVenda = precoVenda;
+        this.ativo = ativo;
     }
 
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
