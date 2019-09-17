@@ -6,11 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 
-public class ProdutoDADOS {
+public class ProdutoDados {
 
     private final ConexaoSQLite conexaoSQLite;
 
-    public ProdutoDADOS (ConexaoSQLite conexaoSQLite){
+    public ProdutoDados (ConexaoSQLite conexaoSQLite){
         this.conexaoSQLite = conexaoSQLite;
     }
 
@@ -19,7 +19,7 @@ public class ProdutoDADOS {
 
         try{
             ContentValues values = new ContentValues();
-            values.put("id", produto.getCodigo());
+            values.put("id", produto.getId());
             values.put("nome", produto.getNome());
             values.put("quantidade", produto.getQuantidade());
             values.put("data", produto.getDataEntrada());

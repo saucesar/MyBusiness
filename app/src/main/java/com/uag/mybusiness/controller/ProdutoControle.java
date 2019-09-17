@@ -1,19 +1,19 @@
 package com.uag.mybusiness.controller;
 
-import com.uag.mybusiness.dados.ProdutoDADOS;
+import com.uag.mybusiness.dados.ProdutoDados;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 
 public class ProdutoControle {
 
-    private final ProdutoDADOS produtoDADOS;
+    private final ProdutoDados produtoDados;
 
     public ProdutoControle(ConexaoSQLite nConexaoSQLite){
-        produtoDADOS = new ProdutoDADOS(nConexaoSQLite);
+        produtoDados = new ProdutoDados(nConexaoSQLite);
     }
 
     public long salvarProdutoControle(Produto produto){
-        return this.produtoDADOS.salvarProdutoDADOS(produto);
+        return this.produtoDados.salvarProdutoDADOS(produto);
     }
 
 
