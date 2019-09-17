@@ -26,7 +26,7 @@ public class ActivityMenu extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 //Chama a janela produto
-                Intent intent = new Intent(ActivityMenu.this, ActivityMenu.class);
+                Intent intent = new Intent(ActivityMenu.this, ActivityProduto.class);
                 startActivity(intent);
             }
         });

@@ -11,6 +11,10 @@ public class Produto {
     private double precoVenda;
     private int ativo;
 
+    public Produto(){
+
+    }
+
     public Produto(int id,String nome, int quantidade, String dataEntrada, double precoCompra,double precoVenda,int ativo){
         this.id = id;
         this.nome = nome;

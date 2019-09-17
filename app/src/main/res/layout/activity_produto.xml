@@ -180,7 +180,7 @@
                 >
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/checkBoxAtivo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/formulario_produto_ativo"
@@ -196,6 +196,7 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/buttonSalvarProduto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/formulario_botao_salvar" />

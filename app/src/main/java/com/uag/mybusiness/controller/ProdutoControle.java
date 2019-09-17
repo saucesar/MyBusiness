@@ -12,8 +12,8 @@ public class ProdutoControle {
         produtoDados = new ProdutoDados(nConexaoSQLite);
     }
 
-    public long salvarProdutoControle(Produto produto){
-        return this.produtoDados.salvarProdutoDADOS(produto);
+    public int salvarProdutoControle(Produto produto){
+        return this.produtoDados.salvarProdutoDados(produto);
     }
 
 

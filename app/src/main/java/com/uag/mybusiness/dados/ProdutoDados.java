@@ -14,7 +14,7 @@ public class ProdutoDados {
         this.conexaoSQLite = conexaoSQLite;
     }
 
-    public long salvarProdutoDADOS(Produto produto){
+    public int salvarProdutoDados(Produto produto){
         SQLiteDatabase db = conexaoSQLite.getWritableDatabase();
 
         try{
@@ -27,7 +27,7 @@ public class ProdutoDados {
             values.put("precoVenda", produto.getPrecoVenda());
             values.put("ativo", produto.getAtivo());
 
-            long codigoProdutoInserido = db.insert("Produto", null, values);
+            int codigoProdutoInserido = (int) db.insert("Produto", null, values);
 
             return codigoProdutoInserido;
         }catch (Exception e){
