@@ -23,25 +23,30 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase){
         String sqLiteTabelaProduto =
-                "CREATE TABLE IF NOT EXISTS Produto" +
+                "CREATE TABLE IF NOT EXISTS Produtos" +
                 "("+
-                "id INTEGER PRIMARY KEY,"+
+                "id INTEGER PRIMARY KEY autoincrement,"+
                 "nome TEXT,"+
                 "quantidade INTEGER,"+
                 "data TEXT,"+
                 "precoCompra REAL,"+
                 "precoVenda REAL,"+
                 "ativo INTEGER"+
-                ")";
+                "); ";
 
-        sqLiteDatabase.execSQL(sqLiteTabelaProduto);
+        String sqlTabCliente =
+                "CREATE TABLE IF NOT EXISTS Clientes(id INTEGER PRIMARY KEY autoincrement,nome TEXT); ";
 
+        String sqlTabEndereco =
+                "CREATE TABLE IF NOT EXISTS Enderecos(" +
+                "id INTEGER PRIMARY KEY autoincrement,"+
+                "rua TEXT, numero TEXT, bairro TEXT, cidade TEXT,estado TEXT);";
+
+        sqLiteDatabase.execSQL(sqLiteTabelaProduto + sqlTabCliente + sqlTabEndereco);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2){
-
+        onUpgrade(sqLiteDatabase,i,i2);
     }
-
-
 }
