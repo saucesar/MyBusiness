@@ -19,7 +19,6 @@ public class ProdutoDados {
 
         try{
             ContentValues values = new ContentValues();
-            values.put("id", produto.getId());
             values.put("nome", produto.getNome());
             values.put("quantidade", produto.getQuantidade());
             values.put("data", produto.getDataEntrada());
@@ -27,7 +26,7 @@ public class ProdutoDados {
             values.put("precoVenda", produto.getPrecoVenda());
             values.put("ativo", produto.getAtivo());
 
-            int codigoProdutoInserido = (int) db.insert("Produto", null, values);
+            int codigoProdutoInserido = (int) db.insert("Produtos", null, values);
 
             return codigoProdutoInserido;
         }catch (Exception e){
