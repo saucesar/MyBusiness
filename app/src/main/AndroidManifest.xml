@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".activities.ActivityProduto"
-            android:label="Cadastro de Produto"></activity>
+        <activity android:name=".activities.ActivityMenuProduto"></activity>
+        <activity android:name=".activities.ActivityListaProdutos" />
+        <activity
+            android:name=".activities.ActivityProduto"
+            android:label="Cadastro de Produto" />
         <activity
             android:name=".activities.ActivityMenu"
             android:label="Menu" />

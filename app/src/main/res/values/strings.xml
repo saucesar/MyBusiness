@@ -12,6 +12,7 @@
     <string name="formulario_preco_venda">Preço de Venda</string>
     <string name="formulario_produto_ativo">Ativo</string>
     <string name="formulario_botao_salvar">Salvar</string>
+    <string name="cadastrar_produto">Cadastrar</string>
 
 
 </resources>
