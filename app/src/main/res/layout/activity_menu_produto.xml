@@ -5,12 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="@dimen/margem_tela"
     tools:context=".activities.ActivityMenuProduto">
 
-    <Button
-        android:id="@+id/buttonCadastrarProduto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cadastrar_produto" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonCadastrarProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/buscar" />
+
+        <Button
+            android:id="@+id/buttonConsultarProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/cadastrar" />
+    </RelativeLayout>
+
 
 </LinearLayout>

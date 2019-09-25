@@ -37,14 +37,13 @@
 
             <!--Linha 1 Coluna 3 -->
             <Button
-                android:id="@+id/buttonProduto2"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:background="@drawable/icone_venda"
+                android:id="@+id/buttonVenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icone_compra"
                 android:gravity="bottom|center_horizontal"
                 android:text="Produto"
-                android:textSize="12sp"
-                />
+                android:textSize="12sp" />
 
             <!--Linha 1 Coluna 4 -->
             <Space android:layout_width="10dp"></Space>
