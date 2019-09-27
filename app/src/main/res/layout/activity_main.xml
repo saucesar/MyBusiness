@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/margem_tela"
     android:background="@color/bg_tela_login"
-    android:orientation="vertical"
     android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
 
     tools:context=".MainActivity">
 
@@ -16,10 +16,10 @@
         android:layout_height="wrap_content"
         android:background="@color/bg_tela_login_menor"
         android:orientation="vertical"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
 
 
         <LinearLayout
@@ -93,9 +93,6 @@
 
 
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>

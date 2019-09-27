@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="bg_tela_login">#C1C2C0</color>
-    <color name="bg_tela_login_menor">#C8052597</color>
+    <color name="bg_tela_login_menor">#C8A2B2EE</color>
     <color name="bg_cadastra_produto">#FFFFFF</color>
     <color name="hint_cadastra_produto">#0E0D0D</color>
 </resources>
