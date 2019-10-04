@@ -5,27 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/margem_tela"
+    android:layout_margin="@dimen/margem_tela_menu"
     tools:context=".activities.ActivityMenuProduto">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonCadastrarProduto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="@string/buscar" />
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/color_menu"
+            android:textStyle="bold"
+            android:text="@string/cadastrar" />
 
         <Button
             android:id="@+id/buttonConsultarProduto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:text="@string/cadastrar" />
-    </RelativeLayout>
+            android:layout_alignParentRight="true"
+            android:textColor="@color/color_menu"
+            android:textStyle="bold"
+            android:text="@string/buscar" />
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

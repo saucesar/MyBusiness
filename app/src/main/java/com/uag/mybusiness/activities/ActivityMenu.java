@@ -12,7 +12,7 @@ import com.uag.mybusiness.R;
 
 public class ActivityMenu extends AppCompatActivity {
 
-    private Button buttonProduto;
+    private Button ButtonProduto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +20,9 @@ public class ActivityMenu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
 
-        this.buttonProduto = (Button) findViewById(R.id.buttonProduto);
+        this.ButtonProduto = (Button) findViewById(R.id.buttonProduto);
 
-        this.buttonProduto.setOnClickListener(new View.OnClickListener(){
+        this.ButtonProduto.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 //Chama a janela produto

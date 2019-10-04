@@ -13,7 +13,7 @@ import com.uag.mybusiness.controller.ProdutoControle;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 
-public class ActivityProduto extends AppCompatActivity {
+public class ActivityCadastrarProduto extends AppCompatActivity {
 
     private EditText editTextIdProduto;
     private EditText editTextNomeProduto;
@@ -29,7 +29,7 @@ public class ActivityProduto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_produto);
+        setContentView(R.layout.activity_cadastrar_produto);
 
         editTextNomeProduto = (EditText) findViewById(R.id.editTextNomeProduto);
         editTextQuantidadeProduto = (EditText) findViewById(R.id.editTextQuantidadeProduto);
@@ -44,16 +44,16 @@ public class ActivityProduto extends AppCompatActivity {
                 Produto produto = dadosFormularioProduto();
 
                 if(produto != null){
-                    ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityProduto.this));
+                    ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityCadastrarProduto.this));
                     int codigoProduto = produtoControle.salvarProdutoControle(produto);
 
                     if(codigoProduto > 0){
-                        Toast.makeText(ActivityProduto.this, "Produto Salvo com Sucesso!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ActivityCadastrarProduto.this, "Produto Salvo com Sucesso!", Toast.LENGTH_LONG).show();
                     }else{
-                        Toast.makeText(ActivityProduto.this, "Falha ao salvar Produto", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ActivityCadastrarProduto.this, "Falha ao salvar Produto", Toast.LENGTH_LONG).show();
                     }
                 }else{
-                    Toast.makeText(ActivityProduto.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ActivityCadastrarProduto.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
                 }
 
             }

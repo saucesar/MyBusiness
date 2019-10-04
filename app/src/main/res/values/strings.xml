@@ -5,6 +5,10 @@
     <string name="lembrar">Lembrar-se</string>
     <string name="botao_login">Login</string>
     <string name="produto">Produto</string>
+    <string name="cliente">Cliente</string>
+    <string name="venda">Venda</string>
+    <string name="administrador">Administrador</string>
+    <string name="relatorio">Relatório</string>
     <string name="formulario_nome">Nome do Produto</string>
     <string name="formulario_quantidade">Quantidade</string>
     <string name="formulario_data">Data da Entrada</string>
