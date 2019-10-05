@@ -14,7 +14,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/bg_tela_login_menor"
+        android:background="@color/color_menu"
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
@@ -86,6 +86,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
+                android:textColor="@color/color_menu"
+                android:textStyle="bold"
                 android:layout_weight="1"
                 android:text="@string/botao_login" />
 

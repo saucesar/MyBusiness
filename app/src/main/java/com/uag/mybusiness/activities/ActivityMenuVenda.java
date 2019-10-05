@@ -9,22 +9,22 @@ import android.widget.Button;
 
 import com.uag.mybusiness.R;
 
-public class ActivityMenuProduto extends AppCompatActivity {
+public class ActivityMenuVenda extends AppCompatActivity {
 
-    private Button buttonCadastrarProduto;
+    private Button buttonNovaVenda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_produto);
+        setContentView(R.layout.activity_menu_venda);
 
-        this.buttonCadastrarProduto = (Button) findViewById(R.id.buttonCadastrarProduto);
+        this.buttonNovaVenda = (Button) findViewById(R.id.buttonNovaVenda);
 
-        this.buttonCadastrarProduto.setOnClickListener(new View.OnClickListener(){
+        this.buttonNovaVenda.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Chama a janela produto
-                Intent intent = new Intent(ActivityMenuProduto.this, ActivityCadastrarProduto.class);
+                //Chama a janela nova venda
+                Intent intent = new Intent(ActivityMenuVenda.this, ActivityNovaVenda.class);
                 startActivity(intent);
             }
         });
