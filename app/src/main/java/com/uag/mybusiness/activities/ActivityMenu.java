@@ -33,8 +33,8 @@ public class ActivityMenu extends AppCompatActivity {
         this.buttonCliente.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Chama a janela cliente
-                Intent intent = new Intent(ActivityMenu.this, ActivityCadastrarCliente.class);
+                //Chama a janela menu cliente
+                Intent intent = new Intent(ActivityMenu.this, ActivityMenuCliente.class);
                 startActivity(intent);
             }
         });
