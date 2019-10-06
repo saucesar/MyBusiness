@@ -11,7 +11,9 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity android:name=".activities.ActivityMenuCliente"></activity>
         <activity android:name=".activities.ActivityCadastrarCliente" />
-        <activity android:name=".activities.ActivityMenuProduto" />
+        <activity android:name=".activities.ActivityNovaVenda"></activity>
+        <activity android:name=".activities.ActivityMenuVenda" />
+        <activity android:name=".activities.ActivityMenuProduto"></activity>
         <activity android:name=".activities.ActivityListaProdutos" />
         <activity
             android:name=".activities.ActivityCadastrarProduto"

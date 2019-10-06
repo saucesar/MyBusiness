@@ -17,6 +17,7 @@
     <string name="formulario_produto_ativo">Ativo</string>
     <string name="formulario_botao_salvar">Salvar</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="nova_venda">Nova Venda</string>
     <string name="buscar">Buscar</string>
     <string name="Venda">Venda</string>
     <string name="salvar">Salvar</string>
@@ -28,6 +29,13 @@
     <string name="rua">Rua</string>
     <string name="cpf">CPF</string>
     <string name="nome">Nome</string>
-
+    <string name="formulario_venda_produto">Produto</string>
+    <string name="formulario_venda_adicionar">+</string>
+    <string name="formulario_quantidade_compra">1</string>
+    <string name="formulario_hint_valor_produto">0,00</string>
+    <string name="formulario_adicionar_produto">Adicionar</string>
+    <string name="formulario_valor_produto">Valor</string>
+    <string name="formulario_valor_venda">Valor Venda</string>
+    <string name="formulario_salvar_venda">Finalizar Venda</string>
 
 </resources>
