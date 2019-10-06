@@ -6,13 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import com.uag.mybusiness.MainActivity;
 import com.uag.mybusiness.R;
 
 public class ActivityMenu extends AppCompatActivity {
 
     private Button ButtonProduto;
+    private Button buttonCliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +20,6 @@ public class ActivityMenu extends AppCompatActivity {
 
 
         this.ButtonProduto = (Button) findViewById(R.id.buttonProduto);
-
         this.ButtonProduto.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -31,6 +29,15 @@ public class ActivityMenu extends AppCompatActivity {
             }
         });
 
+        this.buttonCliente = (Button) findViewById(R.id.buttonCliente);
+        this.buttonCliente.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Chama a janela cliente
+                Intent intent = new Intent(ActivityMenu.this, ActivityCadastrarCliente.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
