@@ -9,18 +9,36 @@
         android:roundIcon="@drawable/icone_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".activities.ActivityMenuCliente"></activity>
-        <activity android:name=".activities.ActivityCadastrarCliente" />
-        <activity android:name=".activities.ActivityNovaVenda"></activity>
-        <activity android:name=".activities.ActivityMenuVenda" />
-        <activity android:name=".activities.ActivityMenuProduto"></activity>
+        <activity android:name=".activities.ActivityMenuRelatorio"
+            android:label="@string/titulo_tela_menu_relatorio"></activity>
+        <activity
+            android:name=".activities.ActivityCadastrarUsuario"
+            android:label="@string/titulo_tela_cadastrar_usuario" />
+        <activity
+            android:name=".activities.ActivityMenuUsuario"
+            android:label="@string/titulo_tela_menu_usuario" />
+        <activity
+            android:name=".activities.ActivityMenuCliente"
+            android:label="@string/titulo_tela_menu_cliente" />
+        <activity
+            android:name=".activities.ActivityCadastrarCliente"
+            android:label="@string/titulo_tela_cadastrar_cliente" />
+        <activity
+            android:name=".activities.ActivityNovaVenda"
+            android:label="@string/titulo_tela_realizar_venda" />
+        <activity
+            android:name=".activities.ActivityMenuVenda"
+            android:label="@string/titulo_tela_menu_venda" />
+        <activity
+            android:name=".activities.ActivityMenuProduto"
+            android:label="@string/titulo_tela_menu_produto" />
         <activity android:name=".activities.ActivityListaProdutos" />
         <activity
             android:name=".activities.ActivityCadastrarProduto"
-            android:label="Cadastro de Produto" />
+            android:label="@string/titulo_tela_cadastrar_produto" />
         <activity
             android:name=".activities.ActivityMenu"
-            android:label="Menu" />
+            android:label="@string/titulo_tela_menu" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_menu"
+    android:orientation="vertical"
+    tools:context=".activities.ActivityCadastrarUsuario">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margem_tela_login"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewCpf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/cpf"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewNome"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/nome"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewRua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/rua"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/numero"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewBairro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/bairro"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewCidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/cidade"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/estado"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/login"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/senha"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextCpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                android:inputType="number"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:labelFor="@id/textViewNome"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextRua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextBairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:autofillHints=""
+                android:background="@android:color/white"
+                android:ems="10"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSalvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_save_black_24dp"
+        android:text="@string/salvar" />
+
+
+</LinearLayout>
