@@ -6,11 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/color_menu"
     android:orientation="vertical"
+    android:layout_margin="@dimen/margem_tela_menu"
     tools:context=".activities.ActivityCadastrarUsuario">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -19,15 +23,9 @@
             android:layout_marginStart="@dimen/margem_tela_login"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewCpf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/cpf"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/textViewNome"
@@ -39,6 +37,24 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textViewCpf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margem_tela_login"
+                android:includeFontPadding="true"
+                android:text="@string/cpf"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <TextView
                 android:id="@+id/textViewRua"
                 android:layout_width="wrap_content"
@@ -49,15 +65,10 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/textViewNumero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/numero"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
 
             <TextView
                 android:id="@+id/textViewBairro"
@@ -69,6 +80,10 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <TextView
                 android:id="@+id/textViewCidade"
                 android:layout_width="wrap_content"
@@ -78,6 +93,10 @@
                 android:text="@string/cidade"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/textViewEstado"
@@ -89,6 +108,10 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <TextView
                 android:id="@+id/textViewLogin"
                 android:layout_width="wrap_content"
@@ -98,6 +121,10 @@
                 android:text="@string/login"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/textViewSenha"
@@ -109,6 +136,10 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -116,17 +147,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editTextCpf"
+
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:layout_marginEnd="@dimen/margem_tela_login"
-                android:autofillHints=""
-                android:background="@android:color/white"
-                android:ems="10"
-                android:inputType="number"
-                tools:targetApi="o" />
+                android:layout_height="10dp" />
 
             <EditText
                 android:id="@+id/editTextNome"
@@ -141,20 +165,12 @@
                 android:labelFor="@id/textViewNome"
                 tools:targetApi="o" />
 
-            <EditText
-                android:id="@+id/editTextRua"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:layout_marginEnd="@dimen/margem_tela_login"
-                android:autofillHints=""
-                android:background="@android:color/white"
-                android:ems="10"
-                android:inputType="textPersonName"
-                tools:targetApi="o" />
+                android:layout_height="10dp" />
 
             <EditText
-                android:id="@+id/editTextNumero"
+                android:id="@+id/editTextCpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margem_tela_login"
@@ -162,8 +178,60 @@
                 android:autofillHints=""
                 android:background="@android:color/white"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 tools:targetApi="o" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextRua"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_tela_login"
+                    android:layout_marginEnd="@dimen/margem_tela_login"
+                    android:autofillHints=""
+                    android:background="@android:color/white"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/font_formulario"
+                    tools:targetApi="o" />
+
+                <TextView
+                    android:id="@+id/textViewNumero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_tela_login"
+                    android:includeFontPadding="true"
+                    android:text="@string/numero"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_formulario" />
+
+                <EditText
+                    android:id="@+id/editTextNumero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_tela_login"
+                    android:layout_marginEnd="@dimen/margem_tela_login"
+                    android:autofillHints=""
+                    android:background="@android:color/white"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/font_formulario"
+                    tools:targetApi="o" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <EditText
                 android:id="@+id/editTextBairro"
@@ -177,6 +245,10 @@
                 android:inputType="textPersonName"
                 tools:targetApi="o" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <EditText
                 android:id="@+id/editTextCidade"
                 android:layout_width="match_parent"
@@ -188,6 +260,10 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 tools:targetApi="o" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <EditText
                 android:id="@+id/editTextEstado"
@@ -201,6 +277,10 @@
                 android:inputType="textPersonName"
                 tools:targetApi="o" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <EditText
                 android:id="@+id/editTextLogin"
                 android:layout_width="match_parent"
@@ -211,6 +291,10 @@
                 android:background="@android:color/white"
                 android:ems="10"
                 tools:targetApi="o" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <EditText
                 android:id="@+id/editTextSenha"
@@ -229,10 +313,12 @@
 
     <Button
         android:id="@+id/buttonSalvar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
         android:drawableTop="@drawable/ic_save_black_24dp"
-        android:text="@string/salvar" />
-
+        android:text="@string/salvar"
+        android:textSize="@dimen/font_formulario"
+        />
 
 </LinearLayout>
