@@ -21,11 +21,33 @@
         android:paddingRight="20dp"
         android:paddingBottom="20dp">
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cliente"
+            android:textSize="20sp"
+            android:textColor="@color/color_font_formulario" />
+
+        <EditText
+            android:id="@+id/editTextNomeCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_box_formulario"
+            android:inputType="textPersonName"
+            android:textSize="40px"
+            android:textColor="@color/color_hint_formulario" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/bg_tela_login_menor" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/formulario_venda_produto"
-            android:textSize="50px"
+            android:textSize="40px"
             android:textColor="@color/color_font_formulario" />
 
         <EditText
@@ -34,7 +56,7 @@
             android:layout_height="wrap_content"
             android:background="@color/color_box_formulario"
             android:inputType="textPersonName"
-            android:textSize="60px"
+            android:textSize="40px"
             android:textColor="@color/color_hint_formulario" />
 
         <Space
@@ -53,7 +75,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal"
                 android:orientation="vertical"
-
                 >
 
                 <TextView

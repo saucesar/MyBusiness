@@ -57,19 +57,21 @@
             android:drawableTop="@drawable/venda_24"
             android:text="@string/venda"
             android:textSize="40px"
+            android:textStyle="bold"
+            android:textColor="@color/color_menu"
             />
 
 
         <Button
-            android:id="@+id/buttonAdministrador"
+            android:id="@+id/buttonUsuario"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:drawableTop="@drawable/administrador_24"
-            android:text="@string/administrador"
+            android:text="@string/usuarios"
             android:textColor="@color/color_menu"
             android:textStyle="bold"
-            android:textSize="30px"
+            android:textSize="40px"
             />
     </LinearLayout>
 

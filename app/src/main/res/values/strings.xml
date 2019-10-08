@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">MyBusiness</string>
+    <string name="titulo_tela_menu">Menu</string>
+    <string name="titulo_tela_menu_produto">Menu de Produtos</string>
+    <string name="titulo_tela_menu_cliente">Menu de Clientes</string>
+    <string name="titulo_tela_menu_venda">Menu de Vendas</string>
+    <string name="titulo_tela_menu_usuario">Menu de Usuários</string>
+    <string name="titulo_tela_menu_relatorio">Menu de Relatórios</string>
+
+    <string name="titulo_tela_cadastrar_produto">Cadastrar Produto</string>
+    <string name="titulo_tela_cadastrar_cliente">Cadastrar Cliente</string>
+    <string name="titulo_tela_realizar_venda">Realizar Venda</string>
+    <string name="titulo_tela_cadastrar_usuario">Cadastrar Usuário</string>
+    <string name="titulo_tela_relatorio_vendas">Relatório de Vendas</string>
+
     <string name="login">Login</string>
     <string name="senha">Senha</string>
     <string name="lembrar">Lembrar-se</string>
@@ -7,7 +20,7 @@
     <string name="produto">Produto</string>
     <string name="cliente">Cliente</string>
     <string name="venda">Venda</string>
-    <string name="administrador">Administrador</string>
+    <string name="usuarios">Usuários</string>
     <string name="relatorio">Relatório</string>
     <string name="formulario_nome">Nome do Produto</string>
     <string name="formulario_quantidade">Quantidade</string>
@@ -23,7 +36,7 @@
     <string name="voltar">Voltar</string>
     <string name="estado">Estado</string>
     <string name="cidade">Cidade</string>
-    <string name="numero">Numero</string>
+    <string name="numero">N</string>
     <string name="bairro">Bairro</string>
     <string name="rua">Rua</string>
     <string name="cpf">CPF</string>
@@ -37,5 +50,13 @@
     <string name="formulario_valor_venda">Valor Venda</string>
     <string name="formulario_salvar_venda">Finalizar Venda</string>
     <string name="buscar">Buscar</string>
+
+
+    <string name="vendas_anual">Anual</string>
+    <string name="vendas_mensal">Mensal</string>
+    <string name="vendas_semanal">Semanal</string>
+    <string name="vendas_diario">Diário</string>
+
+
 
 </resources>

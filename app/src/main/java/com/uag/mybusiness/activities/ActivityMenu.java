@@ -15,6 +15,8 @@ public class ActivityMenu extends AppCompatActivity {
     private Button ButtonProduto;
     private Button buttonVenda;
     private Button buttonCliente;
+    private Button buttonUsuario;
+    private Button buttonRelatorio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class ActivityMenu extends AppCompatActivity {
         this.buttonVenda = (Button) findViewById(R.id.buttonVenda);
         this.ButtonProduto = (Button) findViewById(R.id.buttonProduto);
         this.buttonCliente = (Button) findViewById(R.id.buttonCliente);
+        this.buttonUsuario = (Button) findViewById(R.id.buttonUsuario);
+        this.buttonRelatorio = (Button) findViewById(R.id.buttonRelatorio);
 
         this.ButtonProduto.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -48,6 +52,24 @@ public class ActivityMenu extends AppCompatActivity {
             public void onClick(View view){
                 //Chama a janela menu cliente
                 Intent intent = new Intent(ActivityMenu.this, ActivityMenuCliente.class);
+                startActivity(intent);
+            }
+        });
+
+        this.buttonUsuario.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Chama a janela menu usuário
+                Intent intent = new Intent(ActivityMenu.this, ActivityMenuUsuario.class);
+                startActivity(intent);
+            }
+        });
+
+        this.buttonRelatorio.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Chama a janela menu usuário
+                Intent intent = new Intent(ActivityMenu.this, ActivityMenuRelatorio.class);
                 startActivity(intent);
             }
         });
