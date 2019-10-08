@@ -16,7 +16,7 @@ public class ActivityMenuUsuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_admin);
+        setContentView(R.layout.activity_menu_usuario);
 
         this.buttonCadastrarUsuario = (Button) findViewById(R.id.buttonCadastrarUsuario);
 
