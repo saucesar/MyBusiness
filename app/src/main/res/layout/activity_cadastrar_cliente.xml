@@ -166,7 +166,7 @@
 
                 <EditText
                     android:id="@+id/editTextRua"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margem_tela_login"
                     android:layout_marginEnd="@dimen/margem_tela_login"
