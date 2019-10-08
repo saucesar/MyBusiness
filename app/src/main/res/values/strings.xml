@@ -18,7 +18,6 @@
     <string name="formulario_botao_salvar">Salvar</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="nova_venda">Nova Venda</string>
-    <string name="buscar">Buscar</string>
     <string name="Venda">Venda</string>
     <string name="salvar">Salvar</string>
     <string name="voltar">Voltar</string>
@@ -37,5 +36,6 @@
     <string name="formulario_valor_produto">Valor</string>
     <string name="formulario_valor_venda">Valor Venda</string>
     <string name="formulario_salvar_venda">Finalizar Venda</string>
+    <string name="buscar">Buscar</string>
 
 </resources>

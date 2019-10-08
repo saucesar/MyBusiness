@@ -6,19 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.uag.mybusiness.R;
 
 public class ActivityMenuCliente extends AppCompatActivity {
 
-    private Button buttonAddCliente;
+    private ImageButton buttonAddCliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_cliente);
 
-        this.buttonAddCliente = (Button) findViewById(R.id.buttonAddCliente);
+        this.buttonAddCliente = (ImageButton) findViewById(R.id.buttonAddCliente);
         this.buttonAddCliente.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
