@@ -17,103 +17,6 @@
         android:layout_weight="1"
         >
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margem_tela_login"
-            android:orientation="vertical"
-            >
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                />
-
-            <TextView
-                android:id="@+id/textViewNome"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/nome"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_formulario" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:id="@+id/textViewCpf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/cpf"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_formulario" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:id="@+id/textViewRua"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/rua"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_formulario" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:id="@+id/textViewBairro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/bairro"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_formulario" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:id="@+id/textViewCidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/cidade"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_formulario" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:id="@+id/textViewEstado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:includeFontPadding="true"
-                android:text="@string/estado"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_formulario" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,42 +25,46 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
                 android:id="@+id/editTextCpf"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:autofillHints=""
+                android:hint="@string/nome"
                 android:textSize="@dimen/font_formulario"
-                android:background="@android:color/white"
+                android:background="@drawable/box_formulario_background"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 tools:targetApi="o" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
                 android:id="@+id/editTextNome"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:autofillHints=""
-                android:background="@android:color/white"
+                android:background="@drawable/box_formulario_background"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:hint="@string/cpf"
                 android:labelFor="@id/textViewNome"
                 android:textSize="@dimen/font_formulario"
                 tools:targetApi="o" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="@dimen/espaco_formulario" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -166,37 +73,32 @@
 
                 <EditText
                     android:id="@+id/editTextRua"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margem_tela_login"
-                    android:layout_marginEnd="@dimen/margem_tela_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/box_formulario"
+                    android:layout_marginTop="@dimen/margem_tela_cadastro"
+                    android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                    android:layout_marginStart="@dimen/margem_tela_cadastro"
                     android:autofillHints=""
-                    android:background="@android:color/white"
+                    android:background="@drawable/box_formulario_background"
                     android:ems="10"
+                    android:hint="@string/rua"
                     android:inputType="textPersonName"
                     android:textSize="@dimen/font_formulario"
                     tools:targetApi="o" />
 
-                <TextView
-                    android:id="@+id/textViewNumero"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margem_tela_login"
-                    android:includeFontPadding="true"
-                    android:text="@string/numero"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/font_formulario" />
 
                 <EditText
                     android:id="@+id/editTextNumero"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margem_tela_login"
-                    android:layout_marginEnd="@dimen/margem_tela_login"
+                    android:layout_height="@dimen/box_formulario"
+                    android:layout_marginTop="@dimen/margem_tela_cadastro"
+                    android:layout_marginEnd="@dimen/margem_tela_cadastro"
                     android:autofillHints=""
-                    android:background="@android:color/white"
+                    android:background="@drawable/box_formulario_background"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="numberSigned"
+                    android:hint="@string/numero"
+                    android:maxLength="4"
                     android:textSize="@dimen/font_formulario"
                     tools:targetApi="o" />
 
@@ -205,59 +107,65 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="@dimen/espaco_formulario" />
 
 
             <EditText
                 android:id="@+id/editTextBairro"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:autofillHints=""
-                android:background="@android:color/white"
+                android:background="@drawable/box_formulario_background"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:hint="@string/bairro"
                 android:textSize="@dimen/font_formulario"
                 tools:targetApi="o" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
                 android:id="@+id/editTextCidade"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:autofillHints=""
-                android:background="@android:color/white"
+                android:background="@drawable/box_formulario_background"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:hint="@string/cidade"
                 android:textSize="@dimen/font_formulario"
                 tools:targetApi="o" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
                 android:id="@+id/editTextEstado"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margem_tela_login"
-                android:layout_marginEnd="@dimen/margem_tela_login"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:autofillHints=""
-                android:background="@android:color/white"
+                android:background="@drawable/box_formulario_background"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:hint="@string/estado"
                 android:textSize="@dimen/font_formulario"
                 tools:targetApi="o" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="@dimen/espaco_formulario" />
 
 
 
@@ -272,6 +180,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
         android:drawableTop="@drawable/ic_save_black_24dp"
+        android:background="@drawable/button_background"
         android:text="@string/salvar"
         android:textSize="@dimen/font_formulario"
         />
