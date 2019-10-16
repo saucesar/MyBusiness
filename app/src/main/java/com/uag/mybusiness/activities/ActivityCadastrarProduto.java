@@ -36,7 +36,7 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
         editTextDataEntradaProduto = (EditText) findViewById(R.id.editTextDataEntradaProduto);
         editTextPrecoCompra = (EditText) findViewById(R.id.editTextPrecoCompra);
         editTextPrecoVenda = (EditText) findViewById(R.id.editTextPrecoVenda);
-        checkBoxAtivo = (CheckBox) findViewById(R.id.checkBoxAtivo);
+        checkBoxAtivo = (CheckBox) findViewById(R.id.checkboxAtivo);
 
         buttonSalvarProduto = (Button) findViewById(R.id.buttonSalvarProduto);
         buttonSalvarProduto.setOnClickListener(new View.OnClickListener() {

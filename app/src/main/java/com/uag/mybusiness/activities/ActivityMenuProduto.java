@@ -5,20 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.uag.mybusiness.R;
 
 public class ActivityMenuProduto extends AppCompatActivity {
 
-    private Button buttonCadastrarProduto;
+    private ImageButton buttonCadastrarProduto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_produto);
 
-        this.buttonCadastrarProduto = (Button) findViewById(R.id.buttonCadastrarProduto);
+        this.buttonCadastrarProduto = (ImageButton) findViewById(R.id.buttonCadrastarProduto);
 
         this.buttonCadastrarProduto.setOnClickListener(new View.OnClickListener(){
             @Override

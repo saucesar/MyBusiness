@@ -59,7 +59,6 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:hint="@string/cpf"
-                android:labelFor="@id/textViewNome"
                 android:textSize="@dimen/font_formulario"
                 tools:targetApi="o" />
 
@@ -167,8 +166,6 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/espaco_formulario" />
-
-
 
         </LinearLayout>
 

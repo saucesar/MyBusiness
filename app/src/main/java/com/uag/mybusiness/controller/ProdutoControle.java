@@ -4,6 +4,8 @@ import com.uag.mybusiness.dados.ProdutoDados;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 
+import java.util.List;
+
 public class ProdutoControle {
 
     private final ProdutoDados produtoDados;
@@ -14,6 +16,10 @@ public class ProdutoControle {
 
     public int salvarProdutoControle(Produto produto){
         return this.produtoDados.salvarProdutoDados(produto);
+    }
+
+    public List<Produto> listarProdutoControle(){
+        return this.produtoDados.listarProdutos();
     }
 
 

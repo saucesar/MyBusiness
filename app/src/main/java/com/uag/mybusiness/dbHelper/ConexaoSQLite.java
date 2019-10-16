@@ -31,6 +31,7 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
                 "data TEXT,"+
                 "precoCompra REAL,"+
                 "precoVenda REAL,"+
+                "Descricao TEXT,"+
                 "ativo INTEGER"+
                 "); ";
 

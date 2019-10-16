@@ -9,19 +9,21 @@ public class Produto {
     private String dataEntrada;
     private double precoCompra;
     private double precoVenda;
+    private String descricao;
     private int ativo;
 
     public Produto(){
 
     }
 
-    public Produto(int id,String nome, int quantidade, String dataEntrada, double precoCompra,double precoVenda,int ativo){
+    public Produto(int id,String nome, int quantidade, String dataEntrada, double precoCompra,double precoVenda, String descricao, int ativo){
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;
         this.dataEntrada = dataEntrada;
         this.precoCompra = precoCompra;
         this.precoVenda = precoVenda;
+        this.descricao = descricao;
         this.ativo = ativo;
     }
 
@@ -37,6 +39,10 @@ public class Produto {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -79,6 +85,14 @@ public class Produto {
         this.precoVenda = precoVenda;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public int getAtivo() {
         return ativo;
     }
@@ -86,6 +100,8 @@ public class Produto {
     public void setAtivo(int ativo) {
         this.ativo = ativo;
     }
+
+
 
     @Override
     public String toString(){

@@ -9,8 +9,9 @@
         android:roundIcon="@drawable/icone_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".activities.ActivityMenuRelatorio"
-            android:label="@string/titulo_tela_menu_relatorio"></activity>
+        <activity
+            android:name=".activities.ActivityMenuRelatorio"
+            android:label="@string/titulo_tela_menu_relatorio" />
         <activity
             android:name=".activities.ActivityCadastrarUsuario"
             android:label="@string/titulo_tela_cadastrar_usuario" />
