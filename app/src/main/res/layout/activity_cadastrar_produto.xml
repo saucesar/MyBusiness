@@ -68,7 +68,7 @@
                 android:layout_marginEnd="@dimen/margem_tela_cadastro"
                 android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:background="@drawable/box_formulario_background"
-                android:inputType="numberSigned"
+                android:inputType="date"
                 android:hint="@string/formulario_data"
                 android:textSize="@dimen/font_formulario" />
 
@@ -117,7 +117,7 @@
 
 
             <EditText
-                android:id="@+id/editTextDecricao"
+                android:id="@+id/editTextDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"

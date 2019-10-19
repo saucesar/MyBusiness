@@ -32,7 +32,7 @@ public class ProdutoDados {
             values.put("descricao", produto.getDescricao());
             values.put("ativo", produto.getAtivo());
 
-            int codigoProdutoInserido = (int) db.insert("Produtos", null, values);
+            int codigoProdutoInserido = (int) db.insert("produtos", null, values);
 
             return codigoProdutoInserido;
         }catch (Exception e){
@@ -41,7 +41,6 @@ public class ProdutoDados {
             if(db != null){
                 db.close();
             }
-
         }
         return 0;
 
@@ -53,7 +52,7 @@ public class ProdutoDados {
         SQLiteDatabase db = null;
         Cursor cursor;
 
-        String query = "SELECT * FROM Produtos;";
+        String query = "SELECT * FROM produtos;";
 
         try{
             db = this.conexaoSQLite.getReadableDatabase();
@@ -66,11 +65,14 @@ public class ProdutoDados {
                     produtoTemporario = new Produto();
                     produtoTemporario.setId(cursor.getInt(0));
                     produtoTemporario.setNome(cursor.getString(1));
-                    produtoTemporario.setDataEntrada(cursor.getString(2));
-                    produtoTemporario.setPrecoCompra(cursor.getDouble(3));
-                    produtoTemporario.setPrecoVenda(cursor.getDouble(4));
-                    produtoTemporario.setDescricao(cursor.getString(5));
-                    produtoTemporario.setAtivo(cursor.getInt(6));
+                    produtoTemporario.setQuantidade(cursor.getInt(2));
+                    produtoTemporario.setDataEntrada(cursor.getString(3));
+                    produtoTemporario.setPrecoCompra(cursor.getDouble(4));
+                    produtoTemporario.setPrecoVenda(cursor.getDouble(5));
+                    produtoTemporario.setDescricao(cursor.getString(6));
+                    produtoTemporario.setAtivo(cursor.getInt(7));
+
+                    listaProdutos.add(produtoTemporario);
                 }while (cursor.moveToNext());
             }
         }catch (Exception e){

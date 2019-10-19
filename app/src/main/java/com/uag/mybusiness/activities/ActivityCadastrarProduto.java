@@ -21,6 +21,7 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
     private EditText editTextDataEntradaProduto;
     private EditText editTextPrecoCompra;
     private EditText editTextPrecoVenda;
+    private EditText editTextDescricao;
     private CheckBox checkBoxAtivo;
     private Button buttonSalvarProduto;
 
@@ -36,6 +37,7 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
         editTextDataEntradaProduto = (EditText) findViewById(R.id.editTextDataEntradaProduto);
         editTextPrecoCompra = (EditText) findViewById(R.id.editTextPrecoCompra);
         editTextPrecoVenda = (EditText) findViewById(R.id.editTextPrecoVenda);
+        editTextDescricao = (EditText) findViewById(R.id.editTextDescricao);
         checkBoxAtivo = (CheckBox) findViewById(R.id.checkboxAtivo);
 
         buttonSalvarProduto = (Button) findViewById(R.id.buttonSalvarProduto);
@@ -73,31 +75,43 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
             }
 
             if(this.editTextQuantidadeProduto.getText().toString().isEmpty() == false){
-                this.produto.setNome(this.editTextQuantidadeProduto.getText().toString());
+                int quantidadeProduto = Integer.parseInt(this.editTextQuantidadeProduto.getText().toString());
+                this.produto.setQuantidade(quantidadeProduto);
             }else{
                 return null;
             }
 
             if(this.editTextDataEntradaProduto.getText().toString().isEmpty() == false){
-                this.produto.setNome(this.editTextDataEntradaProduto.getText().toString());
+                this.produto.setDataEntrada(this.editTextDataEntradaProduto.getText().toString());
             }else{
                 return null;
             }
 
             if(this.editTextPrecoCompra.getText().toString().isEmpty() == false){
-                this.produto.setNome(this.editTextPrecoCompra.getText().toString());
+                double precoCompra = Double.parseDouble(this.editTextPrecoCompra.getText().toString());
+                this.produto.setPrecoCompra(precoCompra);
             }else{
                 return null;
             }
 
             if(this.editTextPrecoVenda.getText().toString().isEmpty() == false){
-                this.produto.setNome(this.editTextPrecoVenda.getText().toString());
+                double precoVenda = Double.parseDouble(this.editTextPrecoVenda.getText().toString());
+                this.produto.setPrecoVenda(precoVenda);
             }else{
                 return null;
             }
 
+            if(this.editTextDescricao.getText().toString().isEmpty() == false){
+                this.produto.setDescricao(this.editTextDescricao.getText().toString());
+            }else{
+                return null;
+            }
 
-            this.produto.setNome(this.checkBoxAtivo.getText().toString());
+            if(checkBoxAtivo.isChecked()){
+                this.produto.setAtivo(1);
+            }else{
+                this.produto.setAtivo(0);
+            }
 
             return produto;
         }
