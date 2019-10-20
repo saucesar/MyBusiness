@@ -5,6 +5,8 @@
     <dimen name="margem_tela_cadastro">1dp</dimen>
     <dimen name="box_formulario">50sp</dimen>
     <dimen name="espaco_formulario">5sp</dimen>
+    <dimen name="espaco_views_horizontal">2sp</dimen>
+    <dimen name="espaco_views_vertical">2sp</dimen>
     <dimen name="font_formulario">20sp</dimen>
 
 </resources>

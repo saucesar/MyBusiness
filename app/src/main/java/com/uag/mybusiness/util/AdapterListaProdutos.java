@@ -50,7 +50,7 @@ public class AdapterListaProdutos extends BaseAdapter {
         TextView textViewDataEntrada= (TextView)view.findViewById(R.id.textViewLayoutProdutoData);
         TextView textViewPrecoCompra = (TextView)view.findViewById(R.id.textViewLayoutProdutoPrecoCompra);
         TextView textViewPrecoVenda = (TextView)view.findViewById(R.id.textViewLayoutProdutoPrecoVenda);
-        TextView textViewDescricao = (TextView)view.findViewById(R.id.textViewLayoutProdutoQuantidade);
+        TextView textViewDescricao = (TextView)view.findViewById(R.id.textViewLayoutProdutoDescricao);
 
         textViewNomeProduto.setText(String.valueOf(this.produtoList.get(posicao).getNome()));
         textViewQuantidadeProduto.setText(String.valueOf(this.produtoList.get(posicao).getQuantidade()));
