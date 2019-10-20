@@ -22,6 +22,10 @@ public class ProdutoControle {
         return this.produtoDados.listarProdutos();
     }
 
+    public boolean excluirProdutoControle(int produto){
+        return this.produtoDados.excluirProdutoDados(produto);
+    }
+
 
 
 }

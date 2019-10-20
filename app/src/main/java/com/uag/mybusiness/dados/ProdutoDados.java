@@ -83,9 +83,31 @@ public class ProdutoDados {
                 db.close();
             }
         }
-
         return listaProdutos;
 
+    }
+
+
+    public boolean excluirProdutoDados(int produto){
+        SQLiteDatabase db = null;
+
+        try {
+            db = this.conexaoSQLite.getWritableDatabase();
+
+            db.delete("produtos",
+                    "id = ?",
+                    new String[]{String.valueOf(produto)});
+        }
+        catch (Exception e){
+            Log.d("Erro ao acessar o banco", "Erro ao acessar produtos no banco para excluir");
+            return false;
+        }finally {
+            if(db != null){
+                db.close();
+            }
+        }
+
+        return true;
     }
 
 

@@ -41,7 +41,7 @@ public class ActivityMenuProduto extends AppCompatActivity {
 
         //Produtos do banco
 
-        ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityMenuProduto.this));
+        final ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityMenuProduto.this));
 
         produtoList = produtoControle.listarProdutoControle();
 
@@ -56,8 +56,8 @@ public class ActivityMenuProduto extends AppCompatActivity {
 
         this.listViewProduto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int posicao, long id) {
-                Produto produtoSelecionado = (Produto) adapterListaProdutos.getItem(posicao);
+            public void onItemClick(AdapterView<?> parent, View view, final int posicao, long id) {
+                final Produto produtoSelecionado = (Produto) adapterListaProdutos.getItem(posicao);
 
                 //Toast.makeText(ActivityMenuProduto.this, "Produto: " + produtoSelecionado.getNome(), Toast.LENGTH_SHORT).show();
 
@@ -76,7 +76,17 @@ public class ActivityMenuProduto extends AppCompatActivity {
                 janelaMenuProduto.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
+                        boolean excluiu = produtoControle.excluirProdutoControle(produtoSelecionado.getId());
+
                         dialog.cancel();
+
+                        if(excluiu == true){
+                            adapterListaProdutos.removerProduto(posicao);
+                            Toast.makeText(ActivityMenuProduto.this, "Produto excluído com sucesso", Toast.LENGTH_SHORT).show();
+
+                        }else{
+                            Toast.makeText(ActivityMenuProduto.this, "Erro ao excluir produto", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
