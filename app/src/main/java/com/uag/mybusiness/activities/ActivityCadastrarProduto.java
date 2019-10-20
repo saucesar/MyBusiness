@@ -1,6 +1,8 @@
 package com.uag.mybusiness.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +50,9 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
                 if(produto != null){
                     ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityCadastrarProduto.this));
                     int codigoProduto = produtoControle.salvarProdutoControle(produto);
+                    finish();
+                    Intent intent = new Intent(ActivityCadastrarProduto.this, ActivityCadastrarProduto.class);
+                    startActivity(intent);
 
                     if(codigoProduto > 0){
                         Toast.makeText(ActivityCadastrarProduto.this, "Produto Salvo com Sucesso!", Toast.LENGTH_LONG).show();
