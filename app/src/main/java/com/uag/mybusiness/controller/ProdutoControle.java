@@ -26,6 +26,10 @@ public class ProdutoControle {
         return this.produtoDados.excluirProdutoDados(produto);
     }
 
+    public boolean atualizarProdutoControle(Produto produto){
+        return this.produtoDados.atualizarProduto(produto);
+    }
+
 
 
 }

@@ -78,8 +78,6 @@ public class ActivityMenuProduto extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         boolean excluiu = produtoControle.excluirProdutoControle(produtoSelecionado.getId());
 
-                        dialog.cancel();
-
                         if(excluiu == true){
                             adapterListaProdutos.removerProduto(posicao);
                             Toast.makeText(ActivityMenuProduto.this, "Produto excluído com sucesso", Toast.LENGTH_SHORT).show();
@@ -93,7 +91,21 @@ public class ActivityMenuProduto extends AppCompatActivity {
                 janelaMenuProduto.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+                        Bundle bundleProduto = new Bundle();
+
+                        bundleProduto.putInt("id", produtoSelecionado.getId());
+                        bundleProduto.putString("nome_produto", produtoSelecionado.getNome());
+                        bundleProduto.putInt("quantidade", produtoSelecionado.getQuantidade());
+                        bundleProduto.putString("data_entrada", produtoSelecionado.getDataEntrada());
+                        bundleProduto.putDouble("preco_compra", produtoSelecionado.getPrecoCompra());
+                        bundleProduto.putDouble("preco_venda", produtoSelecionado.getPrecoVenda());
+                        bundleProduto.putString("descricao", produtoSelecionado.getDescricao());
+
+                        Intent editarProduto = new Intent(ActivityMenuProduto.this, ActivityEditarProduto.class);
+
+                        editarProduto.putExtras(bundleProduto);
+                        finish();
+                        startActivity(editarProduto);
                     }
                 });
 

@@ -9,6 +9,8 @@
         android:roundIcon="@drawable/icone_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:name=".activities.ActivityEditarProduto"
+            android:label="@string/titulo_tela_editar_produto"></activity>
         <activity
             android:name=".activities.ActivityMenuRelatorio"
             android:label="@string/titulo_tela_menu_relatorio" />

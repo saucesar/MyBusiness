@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_menu"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/margem_tela_menu"
+    tools:context=".activities.ActivityEditarProduto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/margem_tela_menu"
+        android:layout_weight="1"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
+            <EditText
+                android:id="@+id/editTextEditNomeProduto"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
+                android:autofillHints=""
+                android:hint="@string/nome"
+                android:textSize="@dimen/font_formulario"
+                android:background="@drawable/box_formulario_background"
+                android:inputType="textPersonName"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
+            <EditText
+                android:id="@+id/editTextEditQuantidadeProduto"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
+                android:background="@drawable/box_formulario_background"
+                android:inputType="numberSigned"
+                android:hint="@string/formulario_quantidade"
+                android:textSize="@dimen/font_formulario" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
+            <EditText
+                android:id="@+id/editTextEditDataEntradaProduto"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
+                android:background="@drawable/box_formulario_background"
+                android:inputType="date"
+                android:hint="@string/formulario_data"
+                android:textSize="@dimen/font_formulario" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextEditPrecoCompra"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/box_formulario"
+                    android:layout_marginTop="@dimen/margem_tela_cadastro"
+                    android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                    android:layout_marginStart="@dimen/margem_tela_cadastro"
+                    android:background="@drawable/box_formulario_background"
+                    android:hint="@string/formulario_preco_compra"
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/font_formulario" />
+
+
+                <EditText
+                    android:id="@+id/editTextEditPrecoVenda"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/box_formulario"
+                    android:layout_marginLeft="@dimen/margem_tela_cadastro"
+                    android:layout_marginTop="@dimen/margem_tela_cadastro"
+                    android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                    android:autofillHints=""
+                    android:background="@drawable/box_formulario_background"
+                    android:inputType="numberDecimal"
+                    android:hint="@string/formulario_preco_venda"
+                    android:maxLength="4"
+                    android:textSize="@dimen/font_formulario" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
+
+            <EditText
+                android:id="@+id/editTextEditDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
+                android:background="@drawable/box_formulario_background"
+                android:inputType="textWebEditText"
+                android:hint="@string/formulario_descricao"
+                android:textSize="@dimen/font_formulario" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/checkboxEditAtivo"
+                android:text="Ativo"
+                android:textColor="@color/fontTelaLogin"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSalvarAlteracaoProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margem_tela_menu"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:drawableTop="@drawable/ic_save_black_24dp"
+        android:background="@drawable/button_background"
+        android:text="@string/alterar"
+        android:textSize="@dimen/font_formulario"
+        />
+
+
+</LinearLayout>

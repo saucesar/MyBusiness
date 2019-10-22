@@ -110,6 +110,46 @@ public class ProdutoDados {
         return true;
     }
 
+    public boolean atualizarProduto(Produto produto){
+        SQLiteDatabase db = null;
+
+        try{
+            db = this.conexaoSQLite.getWritableDatabase();
+
+            ContentValues produtoAtualizado = new ContentValues();
+            produtoAtualizado.put("nome", produto.getNome());
+            produtoAtualizado.put("quantidade", produto.getQuantidade());
+            produtoAtualizado.put("data", produto.getDataEntrada());
+            produtoAtualizado.put("precoCompra", produto.getPrecoCompra());
+            produtoAtualizado.put("precoVenda", produto.getPrecoVenda());
+            produtoAtualizado.put("descricao", produto.getDescricao());
+            produtoAtualizado.put("ativo", produto.getAtivo());
+
+
+            int alterou = db.update("produtos",
+                    produtoAtualizado,
+                    "id =" + produto.getId(),
+                    //new String[]{String.valueOf(produto.getId())}
+                    null
+                    );
+
+            if(alterou > 0){
+                return true;
+            }
+
+        }
+        catch(Exception e){
+            Log.d("Erro ao ler Banco", "Erro, produto não atualizado");
+            return false;
+        }finally {
+            if(db != null){
+                db.close();
+            }
+        }
+
+        return false;
+    }
+
 
 
 }
