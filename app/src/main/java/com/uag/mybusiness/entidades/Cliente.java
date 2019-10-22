@@ -18,7 +18,7 @@ public class Cliente {
         this.cpf = cpf;
         this.endereco = endereco;
     }
-
+    public int getId(){return this.id;}
     public String getNome(){ return this.nome; }
     public void setNome(String nome) { this.nome = nome; }
     public String getCpf(){ return this.cpf; }
