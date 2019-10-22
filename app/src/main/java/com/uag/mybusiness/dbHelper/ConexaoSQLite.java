@@ -37,11 +37,11 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
 
         String sqlTabCliente =
                 "CREATE TABLE IF NOT EXISTS " +
-                        "Clientes(id INTEGER PRIMARY KEY autoincrement, nome TEXT, cpf TEXT)";
+                        "clientes(id INTEGER PRIMARY KEY autoincrement, nome TEXT, cpf TEXT)";
 
         String sqlTabEndereco =
                 "CREATE TABLE IF NOT EXISTS " +
-                        "Enderecos(id INTEGER PRIMARY KEY autoincrement, " +
+                        "enderecos(id INTEGER PRIMARY KEY autoincrement, " +
                         "rua TEXT, numero TEXT, bairro TEXT, cidade TEXT, " +
                         "estado TEXT, cpfCliente TEXT)";
 
