@@ -35,17 +35,19 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
                 "ativo INTEGER"+
                 ")";
 
-        sqLiteDatabase.execSQL(sqLiteTabelaProduto);
-        /*
         String sqlTabCliente =
-                "CREATE TABLE IF NOT EXISTS Clientes(id INTEGER PRIMARY KEY autoincrement,nome TEXT); ";
+                "CREATE TABLE IF NOT EXISTS " +
+                        "Clientes(id INTEGER PRIMARY KEY autoincrement, nome TEXT, cpf TEXT)";
 
         String sqlTabEndereco =
-                "CREATE TABLE IF NOT EXISTS Enderecos(" +
-                "id INTEGER PRIMARY KEY autoincrement,"+
-                "rua TEXT, numero TEXT, bairro TEXT, cidade TEXT,estado TEXT);";
+                "CREATE TABLE IF NOT EXISTS " +
+                        "Enderecos(id INTEGER PRIMARY KEY autoincrement, " +
+                        "rua TEXT, numero TEXT, bairro TEXT, cidade TEXT, " +
+                        "estado TEXT, cpfCliente TEXT)";
 
-        sqLiteDatabase.execSQL(sqlTabCliente + sqlTabEndereco);*/
+        sqLiteDatabase.execSQL(sqLiteTabelaProduto);
+        sqLiteDatabase.execSQL(sqlTabCliente);
+        sqLiteDatabase.execSQL(sqlTabEndereco);
     }
 
     @Override
