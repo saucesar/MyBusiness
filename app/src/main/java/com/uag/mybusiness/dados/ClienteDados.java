@@ -52,7 +52,6 @@ public class ClienteDados {
             db = this.conexaoSQLite.getReadableDatabase();
             cursorClientes = db.rawQuery(queryClientes, null);
 
-
             if (cursorClientes.moveToFirst()){
                 Cliente tempCliente;
                 Endereco enderecoTemp;
@@ -89,5 +88,31 @@ public class ClienteDados {
             }
         }
         return clientes;
+    }
+
+    public boolean excluir(String cpfCliente){
+        boolean bool = false;
+        SQLiteDatabase db = null;
+
+        try {
+            db = this.conexaoSQLite.getWritableDatabase();
+
+            db.delete("clientes",
+                    "cpf = ?",
+                    new String[]{String.valueOf(cpfCliente)});
+            db.delete("enderecos",
+                    "cpfCliente = ?",
+                    new String[]{String.valueOf(cpfCliente)});
+            bool = true;
+        }
+        catch (Exception e){
+            Log.d("Erro ao acessar o banco", "Erro ao acessar clientes no banco para excluir");
+            return bool;
+        }finally {
+            if(db != null){
+                db.close();
+            }
+        }
+        return bool;
     }
 }
