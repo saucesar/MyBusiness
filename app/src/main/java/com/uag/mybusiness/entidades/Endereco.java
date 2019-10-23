@@ -24,6 +24,7 @@ public class Endereco {
         this.cpfCliente = cpfCliente;
     }
 
+    public int getId(){return this.id;}
     public String getCpfCliente(){return this.cpfCliente;}
     public void setCpfCliente(String cpfCliente){this.cpfCliente = cpfCliente;}
     public String getRua(){ return this.rua; }
