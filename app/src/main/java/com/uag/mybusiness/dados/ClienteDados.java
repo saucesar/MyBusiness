@@ -115,4 +115,39 @@ public class ClienteDados {
         }
         return bool;
     }
+
+    public boolean atualizar(Cliente cliente){
+        boolean bool = false;
+        SQLiteDatabase db = null;
+
+        try{
+            db = this.conexaoSQLite.getWritableDatabase();
+
+            ContentValues clienteAtualizado = new ContentValues();
+            ContentValues enderecoAtualizado = new ContentValues();
+
+            clienteAtualizado.put("nome", cliente.getNome());
+            clienteAtualizado.put("cpf", cliente.getCpf());
+
+            enderecoAtualizado.put("rua",cliente.getEndereco().getRua());
+            enderecoAtualizado.put("numero",cliente.getEndereco().getRua());
+            enderecoAtualizado.put("bairro",cliente.getEndereco().getBairro());
+            enderecoAtualizado.put("cidade",cliente.getEndereco().getCidade());
+            enderecoAtualizado.put("estado",cliente.getEndereco().getEstado());
+            enderecoAtualizado.put("cpfCliente",cliente.getCpf());
+
+            int alterouCliente = db.update("clientes", clienteAtualizado,
+                                     "id = " + cliente.getId(),null);
+            int alterouEndereco = db.update("enderecos", enderecoAtualizado,
+                                      "id = " + cliente.getEndereco().getId(),null);
+            if(alterouCliente > 0 && alterouEndereco > 0){ bool = true; }
+        }
+        catch(Exception e){
+            Log.d("Erro ao ler Banco", "Erro, cliente não atualizado");
+            return bool;
+        }finally {
+            if(db != null){ db.close(); }
+        }
+        return bool;
+    }
 }
