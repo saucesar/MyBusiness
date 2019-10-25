@@ -18,8 +18,8 @@ public class ProdutoControle {
         return this.produtoDados.salvarProdutoDados(produto);
     }
 
-    public List<Produto> listarProdutoControle(){
-        return this.produtoDados.listarProdutos();
+    public List<Produto> listarProdutoControle(String nomeProduto){
+        return this.produtoDados.listarProdutos(nomeProduto);
     }
 
     public boolean excluirProdutoControle(int produto){
@@ -28,6 +28,10 @@ public class ProdutoControle {
 
     public boolean atualizarProdutoControle(Produto produto){
         return this.produtoDados.atualizarProduto(produto);
+    }
+
+    public List<Produto> buscarProdutoControle(String nomeProduto){
+        return this.produtoDados.buscarProdutos(nomeProduto);
     }
 
 

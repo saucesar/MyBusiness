@@ -16,7 +16,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextbuscar"
+            android:id="@+id/editTextBuscarProduto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -27,7 +27,7 @@
             tools:targetApi="o" />
 
         <Button
-            android:id="@+id/buttonBuscar"
+            android:id="@+id/buttonBuscarProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"

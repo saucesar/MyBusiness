@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -26,6 +29,8 @@ import java.util.List;
 public class ActivityMenuProduto extends AppCompatActivity {
 
     private ImageButton buttonCadastrarProduto;
+    private Button buttonBuscarProduto;
+    private EditText buscarProduto;
     private ListView listViewProduto;
     private List<Produto> produtoList;
     private AdapterListaProdutos adapterListaProdutos;
@@ -43,7 +48,9 @@ public class ActivityMenuProduto extends AppCompatActivity {
 
         final ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityMenuProduto.this));
 
-        produtoList = produtoControle.listarProdutoControle();
+        this.buscarProduto = (EditText) findViewById(R.id.editTextBuscarProduto);
+
+        produtoList = produtoControle.listarProdutoControle(buscarProduto.getText().toString());
 
         this.listViewProduto = (ListView) findViewById(R.id.listViewProdutos);
 
@@ -51,15 +58,14 @@ public class ActivityMenuProduto extends AppCompatActivity {
 
         this.listViewProduto.setAdapter(this.adapterListaProdutos);
 
-
         this.buttonCadastrarProduto = (ImageButton) findViewById(R.id.buttonCadrastarProduto);
+
+        this.buttonBuscarProduto = (Button) findViewById(R.id.buttonBuscarProduto);
 
         this.listViewProduto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int posicao, long id) {
                 final Produto produtoSelecionado = (Produto) adapterListaProdutos.getItem(posicao);
-
-                //Toast.makeText(ActivityMenuProduto.this, "Produto: " + produtoSelecionado.getNome(), Toast.LENGTH_SHORT).show();
 
                 AlertDialog.Builder janelaMenuProduto = new AlertDialog.Builder(ActivityMenuProduto.this);
 
@@ -110,6 +116,23 @@ public class ActivityMenuProduto extends AppCompatActivity {
                 });
 
                 janelaMenuProduto.create().show();
+
+            }
+        });
+
+        this.buttonBuscarProduto.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Chama a janela produto
+
+                produtoList = produtoControle.listarProdutoControle(buscarProduto.getText().toString());
+
+                listViewProduto = (ListView) findViewById(R.id.listViewProdutos);
+
+                adapterListaProdutos = new AdapterListaProdutos(ActivityMenuProduto.this, produtoList);
+
+                listViewProduto.setAdapter(adapterListaProdutos);
+
 
             }
         });
