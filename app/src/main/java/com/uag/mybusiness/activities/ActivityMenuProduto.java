@@ -34,9 +34,7 @@ public class ActivityMenuProduto extends AppCompatActivity {
     private ListView listViewProduto;
     private List<Produto> produtoList;
     private AdapterListaProdutos adapterListaProdutos;
-    private ProdutoControle produtoControle;
 
-    //ConexaoSQLite conexaoSQLite = ConexaoSQLite.getInstancia(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

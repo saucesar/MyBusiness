@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uag.mybusiness">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icone_app"
@@ -9,8 +11,13 @@
         android:roundIcon="@drawable/icone_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".activities.ActivityEditarProduto"
-            android:label="@string/titulo_tela_editar_produto"></activity>
+
+
+
+        <activity android:name=".activities.ActivityCarrinhoCompra"></activity>
+        <activity
+            android:name=".activities.ActivityEditarProduto"
+            android:label="@string/titulo_tela_editar_produto" />
         <activity
             android:name=".activities.ActivityMenuRelatorio"
             android:label="@string/titulo_tela_menu_relatorio" />
@@ -49,6 +56,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".util.CarregarImagemUrl"
+            android:label="Carregar imagem"
+            ></activity>
+
+        <activity android:name=".util.ProdutoExibir"
+            android:label="Exibir Prdoduto"
+            ></activity>
     </application>
 
 </manifest>

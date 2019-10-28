@@ -30,10 +30,4 @@ public class ProdutoControle {
         return this.produtoDados.atualizarProduto(produto);
     }
 
-    public List<Produto> buscarProdutoControle(String nomeProduto){
-        return this.produtoDados.buscarProdutos(nomeProduto);
-    }
-
-
-
 }

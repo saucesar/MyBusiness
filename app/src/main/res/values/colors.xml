@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#0AEED3</color>
+    <color name="colorPrimary">#021AB1</color>
+    <color name="colorPrimaryDark">#000C0A</color>
+    <color name="colorAccent">#FA0202</color>
     <color name="bg_tela_login">#C1C2C0</color>
     <color name="bg_tela_login_menor">#C8A2B2EE</color>
     <color name="bg_cadastra_produto">#FFFFFF</color>
@@ -12,4 +12,5 @@
     <color name="color_font_formulario">#fff</color>
     <color name="color_hint_formulario">#050101</color>
     <color name="color_box_formulario">#fff</color>
+    <color name="color_background_carrinho">#061B53</color>
 </resources>

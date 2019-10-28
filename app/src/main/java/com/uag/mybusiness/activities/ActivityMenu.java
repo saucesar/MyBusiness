@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.uag.mybusiness.MainActivity;
 import com.uag.mybusiness.R;
+import com.uag.mybusiness.util.CarregarImagemUrl;
 
 public class ActivityMenu extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class ActivityMenu extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 //Chama a janela Venda
-                Intent intent = new Intent(ActivityMenu.this, ActivityMenuVenda.class);
+                Intent intent = new Intent(ActivityMenu.this, ActivityCarrinhoCompra.class);
                 startActivity(intent);
             }
         });
