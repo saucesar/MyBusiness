@@ -46,7 +46,7 @@ public class ProdutoDados {
 
     }
 
-    public List<Produto> listarProdutos(){
+    public List<Produto> listarProdutos(String nomeProduto){
 
         List<Produto> listaProdutos = new ArrayList<>();
         SQLiteDatabase db = null;
@@ -72,7 +72,14 @@ public class ProdutoDados {
                     produtoTemporario.setDescricao(cursor.getString(6));
                     produtoTemporario.setAtivo(cursor.getInt(7));
 
-                    listaProdutos.add(produtoTemporario);
+
+
+                    if(produtoTemporario.getNome().toLowerCase().contains(nomeProduto.toLowerCase())){
+                        listaProdutos.add(produtoTemporario);
+                    }
+                    else if(nomeProduto == ""){
+                        listaProdutos.add(produtoTemporario);
+                    }
                 }while (cursor.moveToNext());
             }
         }catch (Exception e){
@@ -149,7 +156,5 @@ public class ProdutoDados {
 
         return false;
     }
-
-
 
 }

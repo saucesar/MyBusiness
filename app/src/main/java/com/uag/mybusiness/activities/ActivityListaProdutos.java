@@ -31,7 +31,7 @@ public class ActivityListaProdutos extends AppCompatActivity {
 
         this.produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityListaProdutos.this));
 
-        produtoList = produtoControle.listarProdutoControle();
+        //produtoList = produtoControle.listarProdutoControle();
 
         this.listViewProduto = (ListView) findViewById(R.id.listViewProdutos);
 
