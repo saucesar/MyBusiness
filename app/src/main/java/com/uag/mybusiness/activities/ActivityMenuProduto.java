@@ -104,6 +104,8 @@ public class ActivityMenuProduto extends AppCompatActivity {
                         bundleProduto.putDouble("preco_compra", produtoSelecionado.getPrecoCompra());
                         bundleProduto.putDouble("preco_venda", produtoSelecionado.getPrecoVenda());
                         bundleProduto.putString("descricao", produtoSelecionado.getDescricao());
+                        bundleProduto.putString("foto_principal", produtoSelecionado.getFotoPrincipal());
+                        bundleProduto.putString("foto_secundaria", produtoSelecionado.getFotoSecundaria());
 
                         Intent editarProduto = new Intent(ActivityMenuProduto.this, ActivityEditarProduto.class);
 

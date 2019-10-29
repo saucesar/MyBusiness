@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.uag.mybusiness.MainActivity;
 import com.uag.mybusiness.R;
-import com.uag.mybusiness.util.CarregarImagemUrl;
 
 public class ActivityMenu extends AppCompatActivity {
 

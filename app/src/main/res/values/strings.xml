@@ -28,6 +28,8 @@
     <string name="formulario_data">Data da Entrada</string>
     <string name="formulario_preco_compra">Preço de Compra</string>
     <string name="formulario_preco_venda">Preço de Venda</string>
+    <string name="formulario_url_principal">Link da Imagem Principal</string>
+    <string name="formulario_url_secundaria">Link da Imagem Secundária</string>
     <string name="formulario_produto_ativo">Ativo</string>
     <string name="formulario_botao_salvar">Salvar</string>
     <string name="cadastrar">Cadastrar</string>

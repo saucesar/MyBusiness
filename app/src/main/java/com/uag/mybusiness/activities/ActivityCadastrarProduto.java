@@ -24,6 +24,8 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
     private EditText editTextPrecoCompra;
     private EditText editTextPrecoVenda;
     private EditText editTextDescricao;
+    private EditText editTextFotoPrincipal;
+    private EditText editTextFotoSecundaria;
     private CheckBox checkBoxAtivo;
     private Button buttonSalvarProduto;
 
@@ -40,6 +42,8 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
         editTextPrecoCompra = (EditText) findViewById(R.id.editTextPrecoCompra);
         editTextPrecoVenda = (EditText) findViewById(R.id.editTextPrecoVenda);
         editTextDescricao = (EditText) findViewById(R.id.editTextDescricao);
+        editTextFotoPrincipal = (EditText) findViewById(R.id.editTextUrlFotoPrincipal);
+        editTextFotoSecundaria = (EditText) findViewById(R.id.editTextUrlFotoSecundaria);
         checkBoxAtivo = (CheckBox) findViewById(R.id.checkboxAtivo);
 
         buttonSalvarProduto = (Button) findViewById(R.id.buttonSalvarProduto);
@@ -108,6 +112,18 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
 
             if(this.editTextDescricao.getText().toString().isEmpty() == false){
                 this.produto.setDescricao(this.editTextDescricao.getText().toString());
+            }else{
+                return null;
+            }
+
+            if(this.editTextFotoPrincipal.getText().toString().isEmpty() == false){
+                this.produto.setFotoPrincipal(this.editTextFotoPrincipal.getText().toString());
+            }else{
+                return null;
+            }
+
+            if(this.editTextFotoSecundaria.getText().toString().isEmpty() == false){
+                this.produto.setFotoSecundaria(this.editTextFotoSecundaria.getText().toString());
             }else{
                 return null;
             }

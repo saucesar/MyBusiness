@@ -57,13 +57,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".util.CarregarImagemUrl"
-            android:label="Carregar imagem"
-            ></activity>
-
-        <activity android:name=".util.ProdutoExibir"
-            android:label="Exibir Prdoduto"
-            ></activity>
     </application>
 
 </manifest>

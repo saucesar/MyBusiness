@@ -71,14 +71,14 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
                     }
                 });
 
-                janelaMenuProduto.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
+                janelaMenuProduto.setNegativeButton("Detalhes Produto", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }
                 });
 
-                janelaMenuProduto.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+                janelaMenuProduto.setPositiveButton("Adicionar ao Carrinho", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

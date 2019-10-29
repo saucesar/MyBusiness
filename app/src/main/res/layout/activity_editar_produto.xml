@@ -17,8 +17,12 @@
         android:layout_weight="1"
         >
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <LinearLayout
+
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -132,6 +136,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/espaco_formulario" />
 
+            <EditText
+                android:id="@+id/editTextEditUrlFotoPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
+                android:background="@drawable/box_formulario_background"
+                android:inputType="text"
+                android:hint="@string/formulario_url_principal"
+                android:textSize="@dimen/font_formulario" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
+            <EditText
+                android:id="@+id/editTextEditUrlFotoSecundaria"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/box_formulario"
+                android:layout_marginStart="@dimen/margem_tela_cadastro"
+                android:layout_marginTop="@dimen/margem_tela_cadastro"
+                android:layout_marginEnd="@dimen/margem_tela_cadastro"
+                android:background="@drawable/box_formulario_background"
+                android:hint="@string/formulario_url_secundaria"
+                android:inputType="text"
+                android:textSize="@dimen/font_formulario" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/espaco_formulario" />
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -140,6 +176,8 @@
                 android:textColor="@color/fontTelaLogin"/>
 
         </LinearLayout>
+
+        </ScrollView>
 
 
     </LinearLayout>

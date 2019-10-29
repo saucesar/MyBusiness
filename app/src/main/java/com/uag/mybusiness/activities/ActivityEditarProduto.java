@@ -26,6 +26,8 @@ public class ActivityEditarProduto extends AppCompatActivity {
     private EditText edtPrecoCompra;
     private EditText edtPrecoVenda;
     private EditText edtDescricao;
+    private EditText edtFotoPrincipal;
+    private EditText edtFotoSecundaria;
     private CheckBox checkBoxAtivo;
     private Button buttonAlterar;
     private Produto produto;
@@ -41,6 +43,8 @@ public class ActivityEditarProduto extends AppCompatActivity {
         this.edtPrecoCompra = (EditText)findViewById(R.id.editTextEditPrecoCompra);
         this.edtPrecoVenda = (EditText)findViewById(R.id.editTextEditPrecoVenda);
         this.edtDescricao = (EditText)findViewById(R.id.editTextEditDescricao);
+        this.edtFotoPrincipal = (EditText)findViewById(R.id.editTextEditUrlFotoPrincipal);
+        this.edtFotoSecundaria= (EditText)findViewById(R.id.editTextEditUrlFotoSecundaria);
         this.checkBoxAtivo = (CheckBox)findViewById(R.id.checkboxEditAtivo);
 
         this.buttonAlterar = (Button)findViewById(R.id.buttonSalvarAlteracaoProduto);
@@ -58,6 +62,8 @@ public class ActivityEditarProduto extends AppCompatActivity {
         produto.setPrecoCompra(editarProduto.getDouble("preco_compra"));
         produto.setPrecoVenda(editarProduto.getDouble("preco_venda"));
         produto.setDescricao(editarProduto.getString("descricao"));
+        produto.setFotoPrincipal(editarProduto.getString("foto_principal"));
+        produto.setFotoSecundaria(editarProduto.getString("foto_secundaria"));
 
         this.setEditTextEditarProduto(produto);
     }
@@ -69,6 +75,8 @@ public class ActivityEditarProduto extends AppCompatActivity {
         this.edtPrecoCompra.setText(String.valueOf(produto.getPrecoCompra()));
         this.edtPrecoVenda.setText(String.valueOf(produto.getPrecoVenda()));
         this.edtDescricao.setText(produto.getDescricao());
+        this.edtFotoPrincipal.setText(produto.getFotoPrincipal());
+        this.edtFotoSecundaria.setText(produto.getFotoSecundaria());
     }
 
     private Produto dadosFormularioProduto(int idProduto){
@@ -112,6 +120,18 @@ public class ActivityEditarProduto extends AppCompatActivity {
 
         if(this.edtDescricao.getText().toString().isEmpty() == false){
             this.produto.setDescricao(this.edtDescricao.getText().toString());
+        }else{
+            return null;
+        }
+
+        if(this.edtFotoPrincipal.getText().toString().isEmpty() == false){
+            this.produto.setFotoPrincipal(this.edtFotoPrincipal.getText().toString());
+        }else{
+            return null;
+        }
+
+        if(this.edtFotoSecundaria.getText().toString().isEmpty() == false){
+            this.produto.setFotoSecundaria(this.edtFotoSecundaria.getText().toString());
         }else{
             return null;
         }

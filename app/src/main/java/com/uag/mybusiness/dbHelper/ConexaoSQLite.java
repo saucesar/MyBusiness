@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ConexaoSQLite extends SQLiteOpenHelper {
     private static ConexaoSQLite INSTANCIA_CONEXAO;
     private static final int VERSAO_DB = 2;
-    private static final String NOME_DB = "banco_dados";
+    private static final String NOME_DB = "banco_dados_business";
 
     public ConexaoSQLite (Context context){
         super(context, NOME_DB, null, VERSAO_DB);
@@ -32,6 +32,8 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
                 "precoCompra REAL,"+
                 "precoVenda REAL,"+
                 "descricao TEXT,"+
+                "foto_principal TEXT,"+
+                "foto_secundaria TEXT,"+
                 "ativo INTEGER"+
                 ")";
 

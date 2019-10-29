@@ -1,14 +1,24 @@
 package com.uag.mybusiness.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uag.mybusiness.R;
 import com.uag.mybusiness.entidades.Produto;
 
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 public class AdapterListaProdutos extends BaseAdapter {
@@ -51,6 +61,9 @@ public class AdapterListaProdutos extends BaseAdapter {
         TextView textViewPrecoCompra = (TextView)view.findViewById(R.id.textViewLayoutProdutoPrecoCompra);
         TextView textViewPrecoVenda = (TextView)view.findViewById(R.id.textViewLayoutProdutoPrecoVenda);
         TextView textViewDescricao = (TextView)view.findViewById(R.id.textViewLayoutProdutoDescricao);
+        ImageView ImageViewFotoPrincipal = (ImageView)view.findViewById(R.id.imageViewLayoutFotoPrincipal);
+        ImageView ImageViewFotoSecundaria = (ImageView)view.findViewById(R.id.imageViewLayoutFotoSecundaria);
+
 
         textViewNomeProduto.setText(String.valueOf(this.produtoList.get(posicao).getNome()));
         textViewQuantidadeProduto.setText(String.valueOf(this.produtoList.get(posicao).getQuantidade()));
@@ -58,6 +71,15 @@ public class AdapterListaProdutos extends BaseAdapter {
         textViewPrecoCompra.setText(String.valueOf(this.produtoList.get(posicao).getPrecoCompra()));
         textViewPrecoVenda.setText(String.valueOf(this.produtoList.get(posicao).getPrecoVenda()));
         textViewDescricao.setText(String.valueOf(this.produtoList.get(posicao).getDescricao()));
+
+        String URL1 = String.valueOf(this.produtoList.get(posicao).getFotoPrincipal());
+        ImageView imagem1 = (ImageView)view.findViewById(R.id.imageViewLayoutFotoPrincipal);
+        imagem1.setImageBitmap(DownloadImage(URL1));
+
+        String URL2 = String.valueOf(this.produtoList.get(posicao).getFotoSecundaria());
+        Log.d("Erro..................", URL2);
+        ImageView imagem2 = (ImageView)view.findViewById(R.id.imageViewLayoutFotoSecundaria);
+        imagem2.setImageBitmap(DownloadImage(URL2));
 
         return view;
     }
@@ -68,5 +90,42 @@ public class AdapterListaProdutos extends BaseAdapter {
         this.produtoList = produtos;
         this.notifyDataSetChanged();
     }
+
+    @SuppressLint("NewApi")
+    public Bitmap DownloadImage(String pURL){
+
+        StrictMode.ThreadPolicy vPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(vPolicy);
+
+        InputStream inStream = null;
+        Bitmap vBitmap = null;
+
+        try{
+
+            URL url = new URL(pURL);
+            HttpURLConnection pConnection = (HttpURLConnection)url.openConnection();
+            pConnection.setDoInput(true);
+            pConnection.connect();
+
+            if(pConnection.getResponseCode() == HttpURLConnection.HTTP_OK){
+
+                inStream = pConnection.getInputStream();
+                vBitmap = BitmapFactory.decodeStream(inStream);
+                inStream.close();
+
+                return vBitmap;
+            }
+
+        }
+        catch(Exception ex){
+            Log.e("Exception",ex.toString());
+            Log.d("Erro..................","Nao conectou");
+        }
+
+        return null;
+
+    }
+
+
 
 }

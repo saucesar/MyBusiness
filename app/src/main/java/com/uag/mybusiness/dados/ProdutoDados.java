@@ -30,6 +30,8 @@ public class ProdutoDados {
             values.put("precoCompra", produto.getPrecoCompra());
             values.put("precoVenda", produto.getPrecoVenda());
             values.put("descricao", produto.getDescricao());
+            values.put("foto_principal", produto.getFotoPrincipal());
+            values.put("foto_secundaria", produto.getFotoSecundaria());
             values.put("ativo", produto.getAtivo());
 
             int codigoProdutoInserido = (int) db.insert("produtos", null, values);
@@ -70,7 +72,9 @@ public class ProdutoDados {
                     produtoTemporario.setPrecoCompra(cursor.getDouble(4));
                     produtoTemporario.setPrecoVenda(cursor.getDouble(5));
                     produtoTemporario.setDescricao(cursor.getString(6));
-                    produtoTemporario.setAtivo(cursor.getInt(7));
+                    produtoTemporario.setFotoPrincipal(cursor.getString(7));
+                    produtoTemporario.setFotoSecundaria(cursor.getString(8));
+                    produtoTemporario.setAtivo(cursor.getInt(9));
 
 
 
@@ -130,6 +134,8 @@ public class ProdutoDados {
             produtoAtualizado.put("precoCompra", produto.getPrecoCompra());
             produtoAtualizado.put("precoVenda", produto.getPrecoVenda());
             produtoAtualizado.put("descricao", produto.getDescricao());
+            produtoAtualizado.put("foto_principal", produto.getFotoPrincipal());
+            produtoAtualizado.put("foto_secundaria", produto.getFotoSecundaria());
             produtoAtualizado.put("ativo", produto.getAtivo());
 
 

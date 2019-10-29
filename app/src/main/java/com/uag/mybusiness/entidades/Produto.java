@@ -11,6 +11,8 @@ public class Produto {
     private double precoVenda;
     private String descricao;
     private int ativo;
+    private String fotoPrincipal;
+    private String fotoSecundaria;
 
     public Produto(){
 
@@ -101,7 +103,21 @@ public class Produto {
         this.ativo = ativo;
     }
 
+    public String getFotoPrincipal() {
+        return fotoPrincipal;
+    }
 
+    public void setFotoPrincipal(String fotoPrincipal) {
+        this.fotoPrincipal = fotoPrincipal;
+    }
+
+    public String getFotoSecundaria() {
+        return fotoSecundaria;
+    }
+
+    public void setFotoSecundaria(String fotoSecundaria) {
+        this.fotoSecundaria = fotoSecundaria;
+    }
 
     @Override
     public String toString(){
