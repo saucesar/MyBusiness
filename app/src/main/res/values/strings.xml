@@ -59,6 +59,7 @@
     <string name="vendas_mensal">Mensal</string>
     <string name="vendas_semanal">Semanal</string>
     <string name="vendas_diario">Diário</string>
+    <string name="id">ID</string>
 
 
 </resources>

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class AdapterListaProdutos extends BaseAdapter {
 
-    private Context context;;
+    private Context context;
     private List<Produto> produtoList;
 
     public AdapterListaProdutos(Context context, List<Produto> produtoList) {

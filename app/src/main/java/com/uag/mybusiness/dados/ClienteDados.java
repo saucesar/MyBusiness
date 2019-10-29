@@ -3,7 +3,6 @@ package com.uag.mybusiness.dados;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Cliente;
 import com.uag.mybusiness.entidades.Endereco;
-import com.uag.mybusiness.entidades.Produto;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,11 +15,11 @@ import java.util.List;
 
 public class ClienteDados {
     private ConexaoSQLite conexaoSQLite;
-    public ClienteDados(Context context){
-        this.conexaoSQLite = ConexaoSQLite.getInstancia(context);
+    public ClienteDados(ConexaoSQLite conexaoSQLite){
+        this.conexaoSQLite = conexaoSQLite;
     }
 
-    public void inserir(Cliente cliente){
+    public int inserir(Cliente cliente){
         ContentValues ClienteValues = new ContentValues();
         ContentValues EnderecoValues = new ContentValues();
 
@@ -35,8 +34,10 @@ public class ClienteDados {
         EnderecoValues.put("cpfCliente",cliente.getCpf());
 
         SQLiteDatabase db = this.conexaoSQLite.getWritableDatabase();
-        db.insert("Clientes",null, ClienteValues);
+        int status = (int)db.insert("Clientes",null, ClienteValues);
         db.insert("Enderecos",null, EnderecoValues);
+
+        return status;
     }
 
     public List<Cliente> listarClientes(){
