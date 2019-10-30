@@ -29,7 +29,7 @@
                 android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
-                android:id="@+id/editTextCpf"
+                android:id="@+id/editTextNome"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/box_formulario"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -48,7 +48,7 @@
                 android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
-                android:id="@+id/editTextNome"
+                android:id="@+id/editTextCpf"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/box_formulario"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
