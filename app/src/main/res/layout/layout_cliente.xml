@@ -6,6 +6,7 @@
     android:layout_marginLeft="@dimen/margem_tela_login"
     android:layout_marginTop="@dimen/margem_tela_login"
     android:layout_marginRight="@dimen/margem_tela_login"
+    android:background="@drawable/carrinho_background"
     android:orientation="vertical"
     app:layout_goneMarginBottom="@dimen/margem_tela_login">
 
