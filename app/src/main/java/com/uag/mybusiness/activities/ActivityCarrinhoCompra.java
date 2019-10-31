@@ -71,10 +71,26 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
                     }
                 });
 
-                janelaMenuProduto.setNegativeButton("Detalhes Produto", new DialogInterface.OnClickListener() {
+                janelaMenuProduto.setNegativeButton("Detalhes do Produto", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                        Bundle bundleProduto = new Bundle();
+
+                        bundleProduto.putInt("id", produtoSelecionado.getId());
+                        bundleProduto.putString("nome_produto", produtoSelecionado.getNome());
+                        bundleProduto.putInt("quantidade", produtoSelecionado.getQuantidade());
+                        bundleProduto.putString("data_entrada", produtoSelecionado.getDataEntrada());
+                        bundleProduto.putDouble("preco_compra", produtoSelecionado.getPrecoCompra());
+                        bundleProduto.putDouble("preco_venda", produtoSelecionado.getPrecoVenda());
+                        bundleProduto.putString("descricao", produtoSelecionado.getDescricao());
+                        bundleProduto.putString("foto_principal", produtoSelecionado.getFotoPrincipal());
+                        bundleProduto.putString("foto_secundaria", produtoSelecionado.getFotoSecundaria());
+
+                        Intent detalhesProduto = new Intent(ActivityCarrinhoCompra.this, ActivityDetalhesProduto.class);
+
+                        detalhesProduto.putExtras(bundleProduto);
+                        finish();
+                        startActivity(detalhesProduto);
                     }
                 });
 

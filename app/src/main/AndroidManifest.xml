@@ -11,10 +11,8 @@
         android:roundIcon="@drawable/icone_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-
-
-
-        <activity android:name=".activities.ActivityCarrinhoCompra"></activity>
+        <activity android:name=".activities.ActivityDetalhesProduto"></activity>
+        <activity android:name=".activities.ActivityCarrinhoCompra" />
         <activity
             android:name=".activities.ActivityEditarProduto"
             android:label="@string/titulo_tela_editar_produto" />
@@ -56,7 +54,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
