@@ -39,7 +39,6 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
         editTextBairro = (EditText) findViewById(R.id.editTextBairro);
         editTextEstado = (EditText) findViewById(R.id.editTextEstado);
 
-
         this.buttonSalvar = (Button) findViewById(R.id.buttonSalvar);
         this.buttonSalvar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -47,18 +46,21 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
                 //Chama a janela cliente
                 final ClienteControle clienteControle = new ClienteControle(ConexaoSQLite.getInstancia(ActivityCadastrarCliente.this));
 
-                clienteControle.salvarClienteControle(getDados());
+                Cliente cliente = getDados();
 
-                Intent intent = new Intent(ActivityCadastrarCliente.this, ActivityMenuCliente.class);
-                startActivity(intent);
-                finish();
-                clikSalvar();
+                if(clienteValido(cliente)){
+                    clienteControle.salvarClienteControle(cliente);
+                    clikSalvar();
+                    Intent intent = new Intent(ActivityCadastrarCliente.this, ActivityMenuCliente.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }
 
     public void clikSalvar(){
-        Toast.makeText(ActivityCadastrarCliente.this, "Cliente Salvo com Sucesso!", Toast.LENGTH_LONG).show();
+        Toast.makeText(ActivityCadastrarCliente.this, "Cliente Salvo com Sucesso!!!", Toast.LENGTH_LONG).show();
     }
 
     private Cliente getDados(){
@@ -71,5 +73,50 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
         String estado = editTextEstado.getText().toString();
 
         return new Cliente(nome,cpf,new Endereco(rua,numero,bairro,cidade,estado,cpf));
+    }
+
+    private boolean clienteValido(Cliente cliente){
+        short len_minimo = 5, len_cpf = 11, len_estado = 2;
+
+        boolean nome_valido = cliente.getNome().length() > len_minimo;
+        boolean cpf_valido = cliente.getCpf().length() == len_cpf;
+        boolean rua_valida = cliente.getEndereco().getRua().length() > len_minimo;
+        boolean numero_valido = cliente.getEndereco().getNumero().length() > 1;
+        boolean bairro_valido = cliente.getEndereco().getBairro().length() > len_minimo;
+        boolean cidade_valida = cliente.getEndereco().getCidade().length() > len_minimo;
+        boolean estado_valido = cliente.getEndereco().getEstado().length() > len_estado;
+        boolean cliente_valido = false;
+
+        if(nome_valido && cpf_valido && rua_valida && numero_valido && bairro_valido && cidade_valida && estado_valido){
+            cliente_valido = true;
+        }
+        else{
+            String msg = "Campos Abaixo São Invalidos:\n";
+            if(!nome_valido){
+                msg+="| Nome ";
+            }
+            if(!cpf_valido){
+                msg+="| CPF ";
+            }
+            if(!rua_valida){
+                msg+="| Rua ";
+            }
+            if(!numero_valido){
+                msg+="| Numero ";
+            }
+            if(!bairro_valido){
+                msg+="| Bairro ";
+            }
+            if(!cidade_valida){
+                msg+="| Cidade ";
+            }
+            if(!estado_valido){
+                msg+="| Estado ";
+            }
+            msg+="|";
+            Toast.makeText(ActivityCadastrarCliente.this, msg, Toast.LENGTH_LONG).show();
+        }
+
+        return cliente_valido;
     }
 }

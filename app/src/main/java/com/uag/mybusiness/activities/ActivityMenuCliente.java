@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -29,6 +30,14 @@ public class ActivityMenuCliente extends AppCompatActivity {
     private List<Cliente> clienteList;
     private ListView listViewClientes;
     private AdapterListaClientes adapterListaClientes;
+
+    private EditText editTextNome;
+    private EditText editTextCpf;
+    private EditText editTextRua;
+    private EditText editTextNumero;
+    private EditText editTextCidade;
+    private EditText editTextBairro;
+    private EditText editTextEstado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +83,7 @@ public class ActivityMenuCliente extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         boolean excluiu = clienteControle.excluirClienteControle(clienteSelecionado.getCpf());
 
-                        if(excluiu == true){
+                        if(excluiu){
                             adapterListaClientes.removerProduto(posicao);
                             Toast.makeText(ActivityMenuCliente.this, "Cliente excluído com sucesso", Toast.LENGTH_SHORT).show();
 
@@ -98,11 +107,24 @@ public class ActivityMenuCliente extends AppCompatActivity {
                         bundleCliente.putString("bairro", clienteSelecionado.getEndereco().getBairro());
                         bundleCliente.putString("estado", clienteSelecionado.getEndereco().getEstado());
 
-                        Intent editarProduto = new Intent(ActivityMenuCliente.this, ActivityEditarProduto.class);
+                        Intent editarCliente = new Intent(ActivityMenuCliente.this, ActivityCadastrarCliente.class);
+                        startActivity(editarCliente);
 
-                        editarProduto.putExtras(bundleCliente);
+                        editTextNome = findViewById(R.id.editTextNome);
+                        editTextCpf = findViewById(R.id.editTextCpf);
+                        editTextRua = findViewById(R.id.editTextRua);
+                        editTextNumero = findViewById(R.id.editTextNumero);
+                        editTextCidade = findViewById(R.id.editTextCidade);
+                        editTextBairro = findViewById(R.id.editTextBairro);
+                        editTextEstado = findViewById(R.id.editTextEstado);
+
+                        editTextNome.setText(clienteSelecionado.getNome());
+                        editTextCpf.setText(clienteSelecionado.getCpf());
+                        editTextRua.setText(clienteSelecionado.getEndereco().getRua());
+
+                        editarCliente.putExtras(bundleCliente);
+
                         finish();
-                        startActivity(editarProduto);
                     }
                 });
 

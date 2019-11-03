@@ -10,14 +10,22 @@
     android:orientation="vertical"
     app:layout_goneMarginBottom="@dimen/margem_tela_login">
 
-    <TextView
-        android:id="@+id/textViewLayoutClienteNome"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_tela_login"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewLayoutClienteNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_tela_login"
         android:orientation="horizontal">
 
         <TextView
@@ -25,11 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/id" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewLayoutClienteId"
@@ -40,7 +43,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_tela_login">
 
         <TextView
             android:id="@+id/textView2"
@@ -48,14 +52,9 @@
             android:layout_height="wrap_content"
             android:text="@string/cpf" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
         <TextView
             android:id="@+id/textViewLayoutClienteCpf"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
     </LinearLayout>
@@ -63,6 +62,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_tela_login"
         android:orientation="horizontal">
 
         <TextView
@@ -74,11 +74,6 @@
 
         <TextView
             android:id="@+id/textViewLayoutClienteRua"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -100,6 +95,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_tela_login"
         android:orientation="horizontal">
 
         <TextView
@@ -108,11 +104,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/cidade" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewLayoutClienteCidade"
@@ -124,6 +115,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_tela_login"
         android:orientation="horizontal">
 
         <TextView
@@ -134,11 +126,6 @@
 
         <TextView
             android:id="@+id/textViewLayoutClienteBairro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
