@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SQLAndroidSettings">
+    <option name="databases">
+      <map>
+        <entry key="data_C:\Users\sauce\AndroidStudioProjects\MyBusiness\AndroidSqlEditorDatabases\">
+          <value>
+            <list>
+              <option value="emulator-5554" />
+              <option value="/databases/banco_dados_business" />
+              <option value="data" />
+              <option value="data" />
+              <option value="true" />
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="packageNameByDirectory">
+      <map>
+        <entry key="C:\Users\sauce\AndroidStudioProjects\MyBusiness\AndroidSqlEditorDatabases\" value="com.uag.mybusiness" />
+      </map>
+    </option>
+    <option name="storageVersion" value="2" />
+  </component>
+</project>

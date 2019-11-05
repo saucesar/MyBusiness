@@ -29,7 +29,7 @@
                 android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
-                android:id="@+id/editTextNome"
+                android:id="@+id/editTextNomeCliente"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/box_formulario"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -48,7 +48,7 @@
                 android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
-                android:id="@+id/editTextCpf"
+                android:id="@+id/editTextCpfCliente"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/box_formulario"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -72,7 +72,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextRua"
+                    android:id="@+id/editTextRuaCliente"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/box_formulario"
                     android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -88,7 +88,7 @@
 
 
                 <EditText
-                    android:id="@+id/editTextNumero"
+                    android:id="@+id/editTextNumeroCliente"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/box_formulario"
                     android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -111,7 +111,7 @@
 
 
             <EditText
-                android:id="@+id/editTextBairro"
+                android:id="@+id/editTextBairroCliente"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/box_formulario"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -130,7 +130,7 @@
                 android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
-                android:id="@+id/editTextCidade"
+                android:id="@+id/editTextCidadeCliente"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/box_formulario"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -149,7 +149,7 @@
                 android:layout_height="@dimen/espaco_formulario" />
 
             <EditText
-                android:id="@+id/editTextEstado"
+                android:id="@+id/editTextEstadoCliente"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/box_formulario"
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
@@ -173,7 +173,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonSalvar"
+        android:id="@+id/buttonSalvarCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margem_tela_menu"

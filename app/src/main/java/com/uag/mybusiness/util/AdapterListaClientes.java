@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.uag.mybusiness.R;
 import com.uag.mybusiness.entidades.Cliente;
-import com.uag.mybusiness.entidades.Produto;
 
 import java.util.List;
 
@@ -45,14 +44,14 @@ public class AdapterListaClientes extends BaseAdapter {
     public View getView(int posicao, View convertView, ViewGroup parent) {
         View view = View.inflate(this.context, R.layout.layout_cliente, null);
 
-        TextView textViewIdCliente = (TextView)view.findViewById(R.id.textViewLayoutClienteId);
-        TextView textViewNomeCliente = (TextView)view.findViewById(R.id.textViewLayoutClienteNome);
-        TextView textViewCpfCliente = (TextView)view.findViewById(R.id.textViewLayoutClienteCpf);
-        TextView textViewRua = (TextView)view.findViewById(R.id.textViewLayoutClienteRua);
-        TextView textViewNumero = (TextView)view.findViewById(R.id.textViewLayoutClienteNumero);
-        TextView textViewBairro = (TextView)view.findViewById(R.id.textViewLayoutClienteBairro);
-        TextView textViewCidade = (TextView)view.findViewById(R.id.textViewLayoutClienteCidade);
-        TextView textViewEstado = (TextView)view.findViewById(R.id.textViewLayoutClienteEstado);
+        TextView textViewIdCliente = view.findViewById(R.id.textViewLayoutClienteId);
+        TextView textViewNomeCliente = view.findViewById(R.id.textViewLayoutClienteNome);
+        TextView textViewCpfCliente = view.findViewById(R.id.textViewLayoutClienteCpf);
+        TextView textViewRua = view.findViewById(R.id.textViewLayoutClienteRua);
+        TextView textViewNumero = view.findViewById(R.id.textViewLayoutClienteNumero);
+        TextView textViewBairro = view.findViewById(R.id.textViewLayoutClienteBairro);
+        TextView textViewCidade = view.findViewById(R.id.textViewLayoutClienteCidade);
+        TextView textViewEstado = view.findViewById(R.id.textViewLayoutClienteEstado);
 
         textViewIdCliente.setText(String.valueOf(this.clientesList.get(posicao).getId()));
         textViewNomeCliente.setText(String.valueOf(this.clientesList.get(posicao).getNome()));

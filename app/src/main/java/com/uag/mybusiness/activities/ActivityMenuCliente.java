@@ -30,34 +30,25 @@ public class ActivityMenuCliente extends AppCompatActivity {
     private List<Cliente> clienteList;
     private ListView listViewClientes;
     private AdapterListaClientes adapterListaClientes;
-
-    private EditText editTextNome;
-    private EditText editTextCpf;
-    private EditText editTextRua;
-    private EditText editTextNumero;
-    private EditText editTextCidade;
-    private EditText editTextBairro;
-    private EditText editTextEstado;
+    private ClienteControle clienteControle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_cliente);
+        pegarElementosDaView();
 
-        final ClienteControle clienteControle = new ClienteControle(ConexaoSQLite.getInstancia(ActivityMenuCliente.this));
+        this.clienteControle = new ClienteControle(ConexaoSQLite.getInstancia(ActivityMenuCliente.this));
+
         this.clienteList = clienteControle.listarClienteControle();
-
         this.adapterListaClientes = new AdapterListaClientes(ActivityMenuCliente.this, this.clienteList);
-        this.listViewClientes = (ListView) findViewById(R.id.listViewClientes);
         this.listViewClientes.setAdapter(this.adapterListaClientes);
 
-        this.buttonAddCliente = (ImageButton) findViewById(R.id.buttonAddCliente);
         this.buttonAddCliente.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 //Chama a janela cliente
-                Intent intent = new Intent(ActivityMenuCliente.this, ActivityCadastrarCliente.class);
-                startActivity(intent);
+                iniciarCadastroCliente();
+                atualizarListaClientes();
             }
         });
 
@@ -86,7 +77,6 @@ public class ActivityMenuCliente extends AppCompatActivity {
                         if(excluiu){
                             adapterListaClientes.removerProduto(posicao);
                             Toast.makeText(ActivityMenuCliente.this, "Cliente excluído com sucesso", Toast.LENGTH_SHORT).show();
-
                         }else{
                             Toast.makeText(ActivityMenuCliente.this, "Erro ao excluir cliente", Toast.LENGTH_SHORT).show();
                         }
@@ -96,40 +86,30 @@ public class ActivityMenuCliente extends AppCompatActivity {
                 janelaMenuCliente.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Bundle bundleCliente = new Bundle();
-
-                        bundleCliente.putInt("id", clienteSelecionado.getId());
-                        bundleCliente.putString("nome", clienteSelecionado.getNome());
-                        bundleCliente.putString("cpf", clienteSelecionado.getCpf());
-                        bundleCliente.putString("rua", clienteSelecionado.getEndereco().getRua());
-                        bundleCliente.putString("numero", clienteSelecionado.getEndereco().getNumero());
-                        bundleCliente.putString("cidade", clienteSelecionado.getEndereco().getCidade());
-                        bundleCliente.putString("bairro", clienteSelecionado.getEndereco().getBairro());
-                        bundleCliente.putString("estado", clienteSelecionado.getEndereco().getEstado());
-
-                        Intent editarCliente = new Intent(ActivityMenuCliente.this, ActivityCadastrarCliente.class);
-                        startActivity(editarCliente);
-
-                        editTextNome = findViewById(R.id.editTextNome);
-                        editTextCpf = findViewById(R.id.editTextCpf);
-                        editTextRua = findViewById(R.id.editTextRua);
-                        editTextNumero = findViewById(R.id.editTextNumero);
-                        editTextCidade = findViewById(R.id.editTextCidade);
-                        editTextBairro = findViewById(R.id.editTextBairro);
-                        editTextEstado = findViewById(R.id.editTextEstado);
-
-                        editTextNome.setText(clienteSelecionado.getNome());
-                        editTextCpf.setText(clienteSelecionado.getCpf());
-                        editTextRua.setText(clienteSelecionado.getEndereco().getRua());
-
-                        editarCliente.putExtras(bundleCliente);
-
-                        finish();
+                        ActivityCadastrarCliente.setCliente(clienteSelecionado);
+                        iniciarCadastroCliente();
+                        atualizarListaClientes();
                     }
                 });
 
                 janelaMenuCliente.create().show();
             }
         });
+    }
+
+    private void atualizarListaClientes(){
+        adapterListaClientes.atualizar(this.clienteControle.listarClienteControle());
+    }
+
+    private void iniciarCadastroCliente(){
+        Intent intent = new Intent(ActivityMenuCliente.this, ActivityCadastrarCliente.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void pegarElementosDaView(){
+        setContentView(R.layout.activity_menu_cliente);
+        this.buttonAddCliente = findViewById(R.id.buttonAddCliente);
+        this.listViewClientes = findViewById(R.id.listViewClientes);
     }
 }

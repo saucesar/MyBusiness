@@ -5,7 +5,6 @@ import com.uag.mybusiness.entidades.Cliente;
 import com.uag.mybusiness.entidades.Endereco;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -34,8 +33,8 @@ public class ClienteDados {
         EnderecoValues.put("cpfCliente",cliente.getCpf());
 
         SQLiteDatabase db = this.conexaoSQLite.getWritableDatabase();
-        int status = (int)db.insert("Clientes",null, ClienteValues);
-        db.insert("Enderecos",null, EnderecoValues);
+        int status = (int)db.insert("clientes",null, ClienteValues);
+        db.insert("enderecos",null, EnderecoValues);
 
         return status;
     }
@@ -82,18 +81,15 @@ public class ClienteDados {
             }
         }catch (Exception e){
             Log.d("Erro ao acessar a lista", "Erro ao acessar clientes no banco");
-            return null;
         }finally {
-            if(db != null){
-                db.close();
-            }
+            if(db != null){ db.close(); }
         }
         return clientes;
     }
 
     public boolean excluir(String cpfCliente){
         boolean bool = false;
-        SQLiteDatabase db = null;
+        SQLiteDatabase db = conexaoSQLite.getWritableDatabase();
 
         try {
             db = this.conexaoSQLite.getWritableDatabase();
@@ -107,12 +103,9 @@ public class ClienteDados {
             bool = true;
         }
         catch (Exception e){
-            Log.d("Erro ao acessar o banco", "Erro ao acessar clientes no banco para excluir");
-            return bool;
+            Log.d("Erro ao acessar o banco", "Erro ao excluir cliente");
         }finally {
-            if(db != null){
-                db.close();
-            }
+            if(db != null){ db.close(); }
         }
         return bool;
     }
@@ -124,28 +117,29 @@ public class ClienteDados {
         try{
             db = this.conexaoSQLite.getWritableDatabase();
 
-            ContentValues clienteAtualizado = new ContentValues();
-            ContentValues enderecoAtualizado = new ContentValues();
+            ContentValues ClienteValues = new ContentValues();
+            ContentValues EnderecoValues = new ContentValues();
 
-            clienteAtualizado.put("nome", cliente.getNome());
-            clienteAtualizado.put("cpf", cliente.getCpf());
+            ClienteValues.put("nome",cliente.getNome());
+            ClienteValues.put("cpf",cliente.getCpf());
 
-            enderecoAtualizado.put("rua",cliente.getEndereco().getRua());
-            enderecoAtualizado.put("numero",cliente.getEndereco().getRua());
-            enderecoAtualizado.put("bairro",cliente.getEndereco().getBairro());
-            enderecoAtualizado.put("cidade",cliente.getEndereco().getCidade());
-            enderecoAtualizado.put("estado",cliente.getEndereco().getEstado());
-            enderecoAtualizado.put("cpfCliente",cliente.getCpf());
+            EnderecoValues.put("rua",cliente.getEndereco().getRua());
+            EnderecoValues.put("numero",cliente.getEndereco().getNumero());
+            EnderecoValues.put("bairro",cliente.getEndereco().getBairro());
+            EnderecoValues.put("cidade",cliente.getEndereco().getCidade());
+            EnderecoValues.put("estado",cliente.getEndereco().getEstado());
+            EnderecoValues.put("cpfCliente",cliente.getCpf());
 
-            int alterouCliente = db.update("clientes", clienteAtualizado,
-                                     "id = " + cliente.getId(),null);
-            int alterouEndereco = db.update("enderecos", enderecoAtualizado,
-                                      "id = " + cliente.getEndereco().getId(),null);
+            String whereCliente = "id = " + cliente.getId();
+            String whereEndereco = "id = " + cliente.getEndereco().getId();
+
+            int alterouCliente = db.update("clientes", ClienteValues, whereCliente,null);
+            int alterouEndereco = db.update("enderecos", EnderecoValues, whereEndereco,null);
+
             if(alterouCliente > 0 && alterouEndereco > 0){ bool = true; }
         }
         catch(Exception e){
-            Log.d("Erro ao ler Banco", "Erro, cliente não atualizado");
-            return bool;
+            Log.d("Erro ao ler Banco", e.getMessage());
         }finally {
             if(db != null){ db.close(); }
         }

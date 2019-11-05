@@ -25,45 +25,64 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
     private EditText editTextCidade;
     private EditText editTextBairro;
     private EditText editTextEstado;
+    private static Cliente cliente = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_cliente);
 
-        editTextNomeCliente = (EditText) findViewById(R.id.editTextNome);
-        editTextCpfCliente = (EditText) findViewById(R.id.editTextCpf);
-        editTextRua = (EditText) findViewById(R.id.editTextRua);
-        editTextNumero = (EditText) findViewById(R.id.editTextNumero);
-        editTextCidade = (EditText) findViewById(R.id.editTextCidade);
-        editTextBairro = (EditText) findViewById(R.id.editTextBairro);
-        editTextEstado = (EditText) findViewById(R.id.editTextEstado);
+        pegarElementosDaView();
+        //caso cliente não seja nulo significa edição de produto
+        if(ActivityCadastrarCliente.cliente != null){ pegarDadosEditar(cliente);}
 
-        this.buttonSalvar = (Button) findViewById(R.id.buttonSalvar);
         this.buttonSalvar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Chama a janela cliente
                 final ClienteControle clienteControle = new ClienteControle(ConexaoSQLite.getInstancia(ActivityCadastrarCliente.this));
+                Cliente client = pegarDadosCliente();
 
-                Cliente cliente = getDados();
-
-                if(clienteValido(cliente)){
-                    clienteControle.salvarClienteControle(cliente);
-                    clikSalvar();
-                    Intent intent = new Intent(ActivityCadastrarCliente.this, ActivityMenuCliente.class);
-                    startActivity(intent);
-                    finish();
+                if(clienteValido(client)){
+                    if(ActivityCadastrarCliente.cliente == null){
+                        if(clienteControle.salvarClienteControle(client)>0){ clikSalvar();}
+                        else{ clikFalharSalvar();}
+                    }
+                    else{
+                        if(clienteControle.atualizarClienteControle(client)){
+                            clikAtualizar();
+                            ActivityCadastrarCliente.cliente = null;
+                        }
+                        else{ clikFalhaAtualizar();}
+                    }
+                    iniciarMenuCliente();
                 }
             }
         });
     }
 
-    public void clikSalvar(){
+    private void iniciarMenuCliente(){
+        Intent intent = new Intent(ActivityCadastrarCliente.this, ActivityMenuCliente.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void clikSalvar(){
         Toast.makeText(ActivityCadastrarCliente.this, "Cliente Salvo com Sucesso!!!", Toast.LENGTH_LONG).show();
     }
 
-    private Cliente getDados(){
+    private void clikFalharSalvar(){
+        Toast.makeText(ActivityCadastrarCliente.this, "Falha ao Salvar Cliente!!!", Toast.LENGTH_LONG).show();
+    }
+
+    private void clikAtualizar(){
+        Toast.makeText(ActivityCadastrarCliente.this, "Cliente Atualizado com Sucesso!!!", Toast.LENGTH_LONG).show();
+    }
+
+    private void clikFalhaAtualizar(){
+        Toast.makeText(ActivityCadastrarCliente.this, "Falha ao Atualizar Cliente!!!", Toast.LENGTH_LONG).show();
+    }
+
+    private Cliente pegarDadosCliente(){
         String nome = editTextNomeCliente.getText().toString();
         String cpf = editTextCpfCliente.getText().toString();
         String rua = editTextCpfCliente.getText().toString();
@@ -71,8 +90,10 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
         String bairro = editTextBairro.getText().toString();
         String cidade = editTextCidade.getText().toString();
         String estado = editTextEstado.getText().toString();
+        int idCliente = ActivityCadastrarCliente.cliente.getId();
+        int idEndereco = ActivityCadastrarCliente.cliente.getEndereco().getId();
 
-        return new Cliente(nome,cpf,new Endereco(rua,numero,bairro,cidade,estado,cpf));
+        return new Cliente(idCliente,nome,cpf,new Endereco(idEndereco,rua,numero,bairro,cidade,estado,cpf));
     }
 
     private boolean clienteValido(Cliente cliente){
@@ -92,31 +113,43 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
         }
         else{
             String msg = "Campos Abaixo São Invalidos:\n";
-            if(!nome_valido){
-                msg+="| Nome ";
-            }
-            if(!cpf_valido){
-                msg+="| CPF ";
-            }
-            if(!rua_valida){
-                msg+="| Rua ";
-            }
-            if(!numero_valido){
-                msg+="| Numero ";
-            }
-            if(!bairro_valido){
-                msg+="| Bairro ";
-            }
-            if(!cidade_valida){
-                msg+="| Cidade ";
-            }
-            if(!estado_valido){
-                msg+="| Estado ";
-            }
+            if(!nome_valido){ msg+="| Nome "; }
+            if(!cpf_valido){ msg+="| CPF "; }
+            if(!rua_valida){ msg+="| Rua "; }
+            if(!numero_valido){ msg+="| Numero "; }
+            if(!bairro_valido){ msg+="| Bairro "; }
+            if(!cidade_valida){ msg+="| Cidade "; }
+            if(!estado_valido){ msg+="| Estado "; }
             msg+="|";
+
             Toast.makeText(ActivityCadastrarCliente.this, msg, Toast.LENGTH_LONG).show();
         }
 
         return cliente_valido;
+    }
+
+    private void pegarDadosEditar(Cliente cliente){
+        editTextNomeCliente.setText(cliente.getNome());
+        editTextCpfCliente.setText(cliente.getCpf());
+        editTextRua.setText(cliente.getEndereco().getRua());
+        editTextNumero.setText(cliente.getEndereco().getNumero());
+        editTextCidade.setText(cliente.getEndereco().getCidade());
+        editTextBairro.setText(cliente.getEndereco().getBairro());
+        editTextEstado.setText(cliente.getEndereco().getEstado());
+    }
+
+    private void pegarElementosDaView(){
+        editTextNomeCliente = findViewById(R.id.editTextNomeCliente);
+        editTextCpfCliente = findViewById(R.id.editTextCpfCliente);
+        editTextRua = findViewById(R.id.editTextRuaCliente);
+        editTextNumero = findViewById(R.id.editTextNumeroCliente);
+        editTextCidade = findViewById(R.id.editTextCidadeCliente);
+        editTextBairro = findViewById(R.id.editTextBairroCliente);
+        editTextEstado = findViewById(R.id.editTextEstadoCliente);
+        buttonSalvar = findViewById(R.id.buttonSalvarCliente);
+    }
+
+    public static void setCliente(Cliente client){
+        ActivityCadastrarCliente.cliente = client;
     }
 }
