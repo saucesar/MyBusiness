@@ -24,8 +24,6 @@
             android:id="@+id/imageButtonAnteriorFoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
-
             android:background="@drawable/anterior_24"
             android:layout_gravity="center_vertical"/>
 

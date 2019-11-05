@@ -33,6 +33,8 @@ public class ActivityDetalhesProduto extends AppCompatActivity {
     private TextView descricaoProduto;
     private ImageButton buttonFotoAnterior;
     private ImageButton buttonFotoProximo;
+    boolean mudar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,37 +49,13 @@ public class ActivityDetalhesProduto extends AppCompatActivity {
         this.buttonFotoAnterior = (ImageButton) findViewById(R.id.imageButtonAnteriorFoto);
         this.buttonFotoProximo = (ImageButton) findViewById(R.id.imageButtonProximaFoto);
 
-        this.buttonFotoAnterior.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //Chama a janela produto
-
-               Log.d("Funcionou", ".......................................");
 
 
-            }
-        });
 
-        this.buttonFotoProximo.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //Chama a janela produto
-
-                Log.d("Funcionou", ".......................................");
-                /*//------------Chama a funcao de ler url de imagem e joga essa imagem no XML
-                String URL1 = String.valueOf(produto.getFotoPrincipal());
-                ImageView imagem1 = (ImageView)findViewById(R.id.imageViewDetalhesFoto);
-                imagem1.setImageBitmap(DownloadImage(URL1));
-
-                this.fotoPrincipal.setImageBitmap(DownloadImage(URL1));*/
-
-
-            }
-        });
 
         Bundle detalhesProduto = getIntent().getExtras();
 
-        Produto produto = new Produto();
+        final Produto produto = new Produto();
 
         idProduto = detalhesProduto.getInt("id");
         produto.setNome(detalhesProduto.getString("nome_produto"));
@@ -87,7 +65,26 @@ public class ActivityDetalhesProduto extends AppCompatActivity {
         produto.setFotoPrincipal(detalhesProduto.getString("foto_principal"));
         produto.setFotoSecundaria(detalhesProduto.getString("foto_secundaria"));
 
-        this.setTextViewDetalhesProduto(produto);
+        this.setTextViewDetalhesProduto(produto, mudar);
+
+        this.buttonFotoProximo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                mudar = true;
+                setTextViewDetalhesProduto(produto, mudar);
+
+            }
+        });
+
+        this.buttonFotoAnterior.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                mudar = false;
+                setTextViewDetalhesProduto(produto, mudar);
+
+
+            }
+        });
 
     }
 
@@ -95,15 +92,42 @@ public class ActivityDetalhesProduto extends AppCompatActivity {
     * Envia os valores para xlm
     *
     * */
-   private void setTextViewDetalhesProduto(Produto produto){
+   private void setTextViewDetalhesProduto(Produto produto, boolean mudar){
         this.nomeProduto.setText(produto.getNome());
         this.precoProduto.setText(String.valueOf(produto.getPrecoVenda()));
         this.quantidadeProduto.setText(String.valueOf(produto.getQuantidade()));
         this.descricaoProduto.setText(produto.getDescricao());
-       //------------Chama a funcao de ler url de imagem e joga essa imagem no XML
-       String URL1 = String.valueOf(produto.getFotoPrincipal());
-       ImageView imagem1 = (ImageView)findViewById(R.id.imageViewDetalhesFoto);
-       imagem1.setImageBitmap(DownloadImage(URL1));
+
+        if (mudar == false) {
+            //------------Chama a funcao de ler url de imagem e joga essa imagem no XML
+            String URL1 = String.valueOf(produto.getFotoPrincipal());
+            ImageView imagem1 = (ImageView)findViewById(R.id.imageViewDetalhesFoto);
+            imagem1.setImageBitmap(DownloadImage(URL1));
+            this.fotoPrincipal.setImageBitmap(DownloadImage(URL1));
+
+
+        }
+        else{
+            //------------Chama a funcao de ler url de imagem e joga essa imagem no XML
+            String URL1 = String.valueOf(produto.getFotoSecundaria());
+            ImageView imagem1 = (ImageView)findViewById(R.id.imageViewDetalhesFoto);
+            imagem1.setImageBitmap(DownloadImage(URL1));
+            this.fotoPrincipal.setImageBitmap(DownloadImage(URL1));
+        }
+
+
+
+
+    }
+
+    private void mudarFoto(Produto produto){
+
+       boolean mudar = false;
+
+        //------------Chama a funcao de ler url de imagem e joga essa imagem no XML
+        String URL1 = String.valueOf(produto.getFotoPrincipal());
+        ImageView imagem1 = (ImageView)findViewById(R.id.imageViewDetalhesFoto);
+        imagem1.setImageBitmap(DownloadImage(URL1));
 
         this.fotoPrincipal.setImageBitmap(DownloadImage(URL1));
 
