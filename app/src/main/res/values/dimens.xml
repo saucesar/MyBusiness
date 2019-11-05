@@ -8,6 +8,9 @@
     <dimen name="espaco_views_horizontal">2sp</dimen>
     <dimen name="espaco_views_vertical">2sp</dimen>
     <dimen name="font_formulario">20sp</dimen>
+    <dimen name="font_detalhes_nome">40sp</dimen>
+    <dimen name="font_detalhes_carrinho">30sp</dimen>
     <dimen name="font_preco_carrinho">30sp</dimen>
+    <dimen name="font_preco_detalhes">50sp</dimen>
 
 </resources>

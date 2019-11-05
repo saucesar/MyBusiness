@@ -89,7 +89,6 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
                         Intent detalhesProduto = new Intent(ActivityCarrinhoCompra.this, ActivityDetalhesProduto.class);
 
                         detalhesProduto.putExtras(bundleProduto);
-                        finish();
                         startActivity(detalhesProduto);
                     }
                 });

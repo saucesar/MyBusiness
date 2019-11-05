@@ -9,6 +9,7 @@
 
     <string name="titulo_tela_cadastrar_produto">Cadastrar Produto</string>
     <string name="titulo_tela_editar_produto">Editar Produto</string>
+    <string name="titulo_tela_detalhes_produto">Detalhes do Produto</string>
     <string name="titulo_tela_cadastrar_cliente">Cadastrar Cliente</string>
     <string name="titulo_tela_realizar_venda">Realizar Venda</string>
     <string name="titulo_tela_cadastrar_usuario">Cadastrar Usuário</string>
