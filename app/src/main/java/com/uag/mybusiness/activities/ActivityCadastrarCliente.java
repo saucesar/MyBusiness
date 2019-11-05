@@ -85,7 +85,7 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
     private Cliente pegarDadosCliente(){
         String nome = editTextNomeCliente.getText().toString();
         String cpf = editTextCpfCliente.getText().toString();
-        String rua = editTextCpfCliente.getText().toString();
+        String rua = editTextRua.getText().toString();
         String numero = editTextNumero.getText().toString();
         String bairro = editTextBairro.getText().toString();
         String cidade = editTextCidade.getText().toString();
