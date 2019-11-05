@@ -47,9 +47,15 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
                         "rua TEXT, numero TEXT, bairro TEXT, cidade TEXT, " +
                         "estado TEXT, cpfCliente TEXT)";
 
+        String sqlUsuario =
+                "CREATE TABLE IF NOT EXISTS " +
+                        "usuarios(id INTEGER PRIMARY KEY autoincrement, " +
+                        "login TEXT, senha TEXT, lembrar INTEGER)";
+
         sqLiteDatabase.execSQL(sqLiteTabelaProduto);
         sqLiteDatabase.execSQL(sqlTabCliente);
         sqLiteDatabase.execSQL(sqlTabEndereco);
+        sqLiteDatabase.execSQL(sqlUsuario);
     }
 
     @Override
