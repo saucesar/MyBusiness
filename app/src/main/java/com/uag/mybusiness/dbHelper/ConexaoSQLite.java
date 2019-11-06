@@ -1,5 +1,6 @@
 package com.uag.mybusiness.dbHelper;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -70,8 +71,17 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
                         "login TEXT, senha TEXT, lembrar INTEGER)";
 
         sqLiteDatabase.execSQL(sqlUsuario);
+        criarAdmin(sqLiteDatabase);
     }
 
+    public void criarAdmin(SQLiteDatabase sqLiteDatabase){
+        ContentValues adminValues = new ContentValues();
+        adminValues.put("login","admin");
+        adminValues.put("senha","admin");
+        adminValues.put("lembrar",0);
+
+        sqLiteDatabase.insert("usuarios",null,adminValues);
+    }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2){
     }
