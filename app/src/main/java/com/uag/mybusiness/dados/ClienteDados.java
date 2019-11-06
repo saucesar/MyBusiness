@@ -12,7 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteDados {
+public class ClienteDados implements IDadosCliente{
     private ConexaoSQLite conexaoSQLite;
     public ClienteDados(ConexaoSQLite conexaoSQLite){
         this.conexaoSQLite = conexaoSQLite;
