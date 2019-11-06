@@ -22,39 +22,53 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase){
+        criarTabelaProdutos(sqLiteDatabase);
+        criarTabelaClientes(sqLiteDatabase);
+        criarTabelaEnderecos(sqLiteDatabase);
+        criarTabelaUsuarios(sqLiteDatabase);
+    }
+    public void criarTabelaProdutos(SQLiteDatabase sqLiteDatabase){
         String sqLiteTabelaProduto =
                 "CREATE TABLE IF NOT EXISTS produtos" +
-                "("+
-                "id INTEGER PRIMARY KEY autoincrement,"+
-                "nome TEXT,"+
-                "quantidade INTEGER,"+
-                "data TEXT,"+
-                "precoCompra REAL,"+
-                "precoVenda REAL,"+
-                "descricao TEXT,"+
-                "foto_principal TEXT,"+
-                "foto_secundaria TEXT,"+
-                "ativo INTEGER"+
-                ")";
+                        "("+
+                        "id INTEGER PRIMARY KEY autoincrement,"+
+                        "nome TEXT,"+
+                        "quantidade INTEGER,"+
+                        "data TEXT,"+
+                        "precoCompra REAL,"+
+                        "precoVenda REAL,"+
+                        "descricao TEXT,"+
+                        "foto_principal TEXT,"+
+                        "foto_secundaria TEXT,"+
+                        "ativo INTEGER"+
+                        ")";
 
+        sqLiteDatabase.execSQL(sqLiteTabelaProduto);
+    }
+
+    public void criarTabelaClientes(SQLiteDatabase sqLiteDatabase){
         String sqlTabCliente =
                 "CREATE TABLE IF NOT EXISTS " +
                         "clientes(id INTEGER PRIMARY KEY autoincrement, nome TEXT, cpf TEXT)";
 
+        sqLiteDatabase.execSQL(sqlTabCliente);
+    }
+    public void criarTabelaEnderecos(SQLiteDatabase sqLiteDatabase){
         String sqlTabEndereco =
                 "CREATE TABLE IF NOT EXISTS " +
                         "enderecos(id INTEGER PRIMARY KEY autoincrement, " +
                         "rua TEXT, numero TEXT, bairro TEXT, cidade TEXT, " +
                         "estado TEXT, cpfCliente TEXT)";
 
+        sqLiteDatabase.execSQL(sqlTabEndereco);
+    }
+
+    public void criarTabelaUsuarios(SQLiteDatabase sqLiteDatabase){
         String sqlUsuario =
                 "CREATE TABLE IF NOT EXISTS " +
                         "usuarios(id INTEGER PRIMARY KEY autoincrement, " +
                         "login TEXT, senha TEXT, lembrar INTEGER)";
 
-        sqLiteDatabase.execSQL(sqLiteTabelaProduto);
-        sqLiteDatabase.execSQL(sqlTabCliente);
-        sqLiteDatabase.execSQL(sqlTabEndereco);
         sqLiteDatabase.execSQL(sqlUsuario);
     }
 
