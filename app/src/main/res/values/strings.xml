@@ -9,6 +9,8 @@
 
     <string name="titulo_tela_cadastrar_produto">Cadastrar Produto</string>
     <string name="titulo_tela_editar_produto">Editar Produto</string>
+    <string name="titulo_tela_carrinho_compra">Carrinho de Compras</string>
+    <string name="titulo_tela_meu_carrinho">Meu carrinho</string>
     <string name="titulo_tela_detalhes_produto">Detalhes do Produto</string>
     <string name="titulo_tela_cadastrar_cliente">Cadastrar Cliente</string>
     <string name="titulo_tela_realizar_venda">Realizar Venda</string>
@@ -18,7 +20,7 @@
     <string name="login">Login</string>
     <string name="senha">Senha</string>
     <string name="lembrar">Lembrar-se</string>
-    <string name="botao_login">Login</string>
+
     <string name="produto">Produto</string>
     <string name="cliente">Cliente</string>
     <string name="venda">Venda</string>
@@ -33,11 +35,11 @@
     <string name="formulario_url_secundaria">Link da Imagem Secundária</string>
     <string name="formulario_produto_ativo">Ativo</string>
     <string name="formulario_botao_salvar">Salvar</string>
-    <string name="cadastrar">Cadastrar</string>
+
     <string name="nova_venda">Nova Venda</string>
     <string name="Venda">Venda</string>
-    <string name="salvar">Salvar</string>
-    <string name="alterar">Alterar</string>
+
+
     <string name="voltar">Voltar</string>
     <string name="estado">Estado</string>
     <string name="cidade">Cidade</string>
@@ -55,7 +57,7 @@
     <string name="formulario_valor_venda">Valor Venda</string>
     <string name="formulario_descricao">Descricao</string>
     <string name="formulario_salvar_venda">Finalizar Venda</string>
-    <string name="buscar">Buscar</string>
+
 
 
     <string name="vendas_anual">Anual</string>
@@ -64,5 +66,11 @@
     <string name="vendas_diario">Diário</string>
     <string name="id">ID</string>
 
+    <string name="botao_login">Login</string>
+    <string name="buscar">Buscar</string>
+    <string name="salvar">Salvar</string>
+    <string name="alterar">Alterar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="botao_comprar">Comprar</string>
 
 </resources>

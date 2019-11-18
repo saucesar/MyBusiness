@@ -27,6 +27,7 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
         criarTabelaClientes(sqLiteDatabase);
         criarTabelaEnderecos(sqLiteDatabase);
         criarTabelaUsuarios(sqLiteDatabase);
+        criarTabelaCarrinhos(sqLiteDatabase);
     }
     public void criarTabelaProdutos(SQLiteDatabase sqLiteDatabase){
         String sqLiteTabelaProduto =
@@ -81,6 +82,19 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
         adminValues.put("lembrar",0);
 
         sqLiteDatabase.insert("usuarios",null,adminValues);
+    }
+
+    public void criarTabelaCarrinhos(SQLiteDatabase sqLiteDatabase){
+        String sqLiteTabelaCarrinho =
+                "CREATE TABLE IF NOT EXISTS carrinhos" +
+                        "("+
+                        "id INTEGER PRIMARY KEY autoincrement,"+
+                        "data TEXT,"+
+                        "id_cliente INTEGER,"+
+                        "totalCompra REAL"+
+                        ")";
+
+        sqLiteDatabase.execSQL(sqLiteTabelaCarrinho);
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i2){

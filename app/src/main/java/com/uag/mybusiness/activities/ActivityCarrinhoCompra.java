@@ -12,13 +12,18 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.uag.mybusiness.R;
+import com.uag.mybusiness.controller.CarrinhoControle;
 import com.uag.mybusiness.controller.ProdutoControle;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 import com.uag.mybusiness.util.AdapterCarrinhoProdutos;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ActivityCarrinhoCompra extends AppCompatActivity {
@@ -29,6 +34,10 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
     private ListView listViewProduto;
     private List<Produto> produtoList;
     private AdapterCarrinhoProdutos adapterCarrinhoProdutos;
+    private ArrayList<Produto> listProdutoCarrinho;
+    private TextView valorTotalItens;
+    private double valorCompra;
+    private CarrinhoControle carrinhoControle;
 
 
     @Override
@@ -38,7 +47,11 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
 
         //Produtos do banco
 
+
+
         final ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityCarrinhoCompra.this));
+
+        this.listProdutoCarrinho = new ArrayList<>();
 
         this.buscarProduto = (EditText) findViewById(R.id.editTextBuscarProdutoCarrinho);
 
@@ -68,6 +81,8 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+
+
                     }
                 });
 
@@ -96,7 +111,51 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
                 janelaMenuProduto.setPositiveButton("Adicionar ao Carrinho", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+
+
+
+                        if (produtoSelecionado.getQuantidade() > 0){
+                            AlertDialog.Builder janelaAdicionarProduto = new AlertDialog.Builder(ActivityCarrinhoCompra.this);
+
+                            janelaAdicionarProduto.setTitle(produtoSelecionado.getNome());
+                            janelaAdicionarProduto.setMessage("Deseja adicionar ao carrinho");
+
+                            janelaAdicionarProduto.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int id) {
+
+                                    dialog.cancel();
+                                }
+                            });
+
+                            janelaAdicionarProduto.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int id) {
+                                    valorTotalCompra(produtoSelecionado);
+                                    Toast.makeText(ActivityCarrinhoCompra.this, produtoSelecionado.getNome()+" adicionado ao carrinho",Toast.LENGTH_SHORT).show();
+                                    dialog.cancel();
+                                }
+
+
+                            });
+
+                            janelaAdicionarProduto.create().show();
+                        }else{
+                            AlertDialog.Builder janelaMenuProduto = new AlertDialog.Builder(ActivityCarrinhoCompra.this);
+
+                            janelaMenuProduto.setTitle(produtoSelecionado.getNome());
+                            janelaMenuProduto.setMessage("Produto sem estoque");
+
+                            janelaMenuProduto.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                            janelaMenuProduto.create().show();
+                        }
+
                     }
                 });
 
@@ -125,11 +184,40 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
         this.buttonFinalizarCompra.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //Chama a janela produto
-                Intent intent = new Intent(ActivityCarrinhoCompra.this, ActivityCadastrarProduto.class);
-                startActivity(intent);
+
+                /*System.out.println(listProdutoCarrinho.size());
+                System.out.println(listProdutoCarrinho.get(0).getNome());
+                System.out.println(listProdutoCarrinho.get(0).getPrecoVenda());
+                System.out.println(listProdutoCarrinho.get(0).getQuantidade());
+                System.out.println(listProdutoCarrinho.get(0).getPrecoCompra());
+                System.out.println(listProdutoCarrinho.get(0).getFotoPrincipal());
+
+                ArrayList<Produto> lista = new ArrayList<>();
+                Produto produto = new Produto();
+                lista.add(produto);
+                //lista.add(produto);
+                //lista.add(produto);
+                Intent listaProdutos = new Intent(ActivityCarrinhoCompra.this, ActivityFinalizarCompra.class);
+                // passando a lista
+                listaProdutos.putExtra("lista",listProdutoCarrinho);
+                startActivity(listaProdutos);*/
+
+                Intent i = new Intent(ActivityCarrinhoCompra.this, ActivityFinalizarCompra.class);
+                i.putExtra("nome", "Elias");
+                i.putExtra("sobrenome", "Lima");
+                i.putExtra("inteiro", 1299);
+
+                startActivity(i);
             }
         });
+    }
+
+    private void valorTotalCompra(Produto produto){
+
+        this.listProdutoCarrinho.add(produto);
+        valorCompra += produto.getPrecoVenda();
+        valorTotalItens = (TextView) findViewById(R.id.textViewTotalCompra);
+        valorTotalItens.setText(String.valueOf(valorCompra));
     }
 
 }

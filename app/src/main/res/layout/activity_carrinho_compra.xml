@@ -24,7 +24,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="22sp"
-            tools:targetApi="o" />
+            />
 
         <Button
             android:id="@+id/buttonBuscarProdutoCarrinho"
@@ -39,7 +39,8 @@
         android:layout_width="wrap_content"
         android:orientation="horizontal"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:focusable="true">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -57,18 +58,49 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:focusable="true" />
+                    />
             </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonFinalizarCompra"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Finalizar Compra"
-        android:layout_gravity="center|bottom"/>
+        >
+
+
+        <TableRow >
+            <Button
+                android:id="@+id/buttonFinalizarCompra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finalizar Compra"
+                android:layout_gravity="center|bottom"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Total"
+                android:textSize="@dimen/font_formulario"
+                android:textColor="@color/color_font_formulario"/>
+
+            <TextView
+                android:id="@+id/textViewTotalCompra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="0.00"
+                android:textSize="@dimen/font_preco_carrinho"
+                android:textColor="@color/fontTelaLogin"/>
+
+        </TableRow>
+
+    </TableLayout>
+
 
 
 </LinearLayout>

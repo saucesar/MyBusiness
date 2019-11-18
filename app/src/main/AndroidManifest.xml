@@ -11,10 +11,14 @@
         android:roundIcon="@drawable/icone_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".activities.ActivityDetalhesProduto"
-            android:label="@string/titulo_tela_detalhes_produto">
-        </activity>
-        <activity android:name=".activities.ActivityCarrinhoCompra" />
+        <activity android:name=".activities.ActivityFinalizarCompra"
+            android:label="@string/titulo_tela_meu_carrinho"></activity>
+        <activity
+            android:name=".activities.ActivityDetalhesProduto"
+            android:label="@string/titulo_tela_detalhes_produto"></activity>
+
+        <activity android:name=".activities.ActivityCarrinhoCompra"
+            android:label="@string/titulo_tela_carrinho_compra"/>
         <activity
             android:name=".activities.ActivityEditarProduto"
             android:label="@string/titulo_tela_editar_produto" />

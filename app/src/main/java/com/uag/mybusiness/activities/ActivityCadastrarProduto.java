@@ -116,17 +116,9 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
                 return null;
             }
 
-            if(this.editTextFotoPrincipal.getText().toString().isEmpty() == false){
-                this.produto.setFotoPrincipal(this.editTextFotoPrincipal.getText().toString());
-            }else{
-                return null;
-            }
+            this.produto.setFotoPrincipal(this.editTextFotoPrincipal.getText().toString());
 
-            if(this.editTextFotoSecundaria.getText().toString().isEmpty() == false){
-                this.produto.setFotoSecundaria(this.editTextFotoSecundaria.getText().toString());
-            }else{
-                return null;
-            }
+            this.produto.setFotoSecundaria(this.editTextFotoSecundaria.getText().toString());
 
             if(checkBoxAtivo.isChecked()){
                 this.produto.setAtivo(1);
