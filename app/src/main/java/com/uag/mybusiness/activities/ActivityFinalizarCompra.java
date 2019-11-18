@@ -18,12 +18,12 @@ public class ActivityFinalizarCompra extends AppCompatActivity {
 
 
 
-        //ArrayList lista = (ArrayList) getIntent().getSerializableExtra("lista");
+        ArrayList lista = (ArrayList) getIntent().getSerializableExtra("lista");
         //ArrayList<Produto> myList = (ArrayList<Produto>) getIntent().getSerializableExtra("lista");
 
-        //System.out.println("Pessoas: "+ lista.size());
+        System.out.println("Pessoas: "+ lista.size());
         //System.out.println("Pessoas: "+ myList.size());
-        Bundle objeto = getIntent().getExtras();
+        /*Bundle objeto = getIntent().getExtras();
         if(objeto != null){
             String palavra = objeto.getString("nome");
             int numero = objeto.getInt("inteiro");
@@ -35,6 +35,7 @@ public class ActivityFinalizarCompra extends AppCompatActivity {
 
         System.out.println(nome);
         System.out.println(sobrenome);
+        */
 
     }
 }

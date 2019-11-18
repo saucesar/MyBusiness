@@ -184,30 +184,32 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
         this.buttonFinalizarCompra.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                /*
 
-                /*System.out.println(listProdutoCarrinho.size());
+                System.out.println(listProdutoCarrinho.size());
                 System.out.println(listProdutoCarrinho.get(0).getNome());
                 System.out.println(listProdutoCarrinho.get(0).getPrecoVenda());
                 System.out.println(listProdutoCarrinho.get(0).getQuantidade());
                 System.out.println(listProdutoCarrinho.get(0).getPrecoCompra());
                 System.out.println(listProdutoCarrinho.get(0).getFotoPrincipal());
-
                 ArrayList<Produto> lista = new ArrayList<>();
                 Produto produto = new Produto();
                 lista.add(produto);
                 //lista.add(produto);
                 //lista.add(produto);
+                */
                 Intent listaProdutos = new Intent(ActivityCarrinhoCompra.this, ActivityFinalizarCompra.class);
                 // passando a lista
                 listaProdutos.putExtra("lista",listProdutoCarrinho);
-                startActivity(listaProdutos);*/
-
+                startActivity(listaProdutos);
+                /*
                 Intent i = new Intent(ActivityCarrinhoCompra.this, ActivityFinalizarCompra.class);
                 i.putExtra("nome", "Elias");
                 i.putExtra("sobrenome", "Lima");
                 i.putExtra("inteiro", 1299);
+                */
 
-                startActivity(i);
+                //startActivity(i);
             }
         });
     }
