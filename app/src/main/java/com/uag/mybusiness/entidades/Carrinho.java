@@ -7,12 +7,16 @@ public class Carrinho {
 
     private int id;
     private String data;
-    private int idCliente;
-    private List<Produto> listaProdutos = new ArrayList<>();
+    private Cliente cliente;
+    private List<Produto> listaProdutos;
     private double totalCompra;
 
     public Carrinho(){
-
+        this.id = 0;
+        this.data = "18/11/2019";
+        this.cliente = null;
+        this.listaProdutos = new ArrayList<>();
+        this.totalCompra = 0;
     }
 
     public int getId() {
@@ -32,11 +36,11 @@ public class Carrinho {
     }
 
     public int getIdCliente() {
-        return idCliente;
+        return cliente.getId();
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setCliente(Cliente novoCliente) {
+        this.cliente = novoCliente;
     }
 
     public double getTotalCompra() {

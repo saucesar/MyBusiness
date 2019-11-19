@@ -28,7 +28,9 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
         criarTabelaEnderecos(sqLiteDatabase);
         criarTabelaUsuarios(sqLiteDatabase);
         criarTabelaCarrinhos(sqLiteDatabase);
+        criarTabelaLigacaoCarrinhoProduto(sqLiteDatabase);
     }
+
     public void criarTabelaProdutos(SQLiteDatabase sqLiteDatabase){
         String sqLiteTabelaProduto =
                 "CREATE TABLE IF NOT EXISTS produtos" +
@@ -93,6 +95,15 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
                         "id_cliente INTEGER,"+
                         "totalCompra REAL"+
                         ")";
+
+        sqLiteDatabase.execSQL(sqLiteTabelaCarrinho);
+    }
+
+    public void criarTabelaLigacaoCarrinhoProduto(SQLiteDatabase sqLiteDatabase){
+        String sqLiteTabelaCarrinho = "CREATE TABLE IF NOT EXISTS carrinhos_produtos ("+
+                                      "id_carrinho INTEGER CONSTRAINT id_carrinho REFERENCES carrinhos(id)," +
+                                      "id_produto INTEGER  CONSTRAINT id_produto REFERENCES produtos(id)," +
+                                      "precoCompra REAL, precoVenda REAL)";
 
         sqLiteDatabase.execSQL(sqLiteTabelaCarrinho);
     }
