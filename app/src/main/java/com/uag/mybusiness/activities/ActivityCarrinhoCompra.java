@@ -36,6 +36,7 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
     private AdapterCarrinhoProdutos adapterCarrinhoProdutos;
     private ArrayList<Produto> listProdutoCarrinho;
     private TextView valorTotalItens;
+    private int quantidadeProduto;
     private double valorCompra;
     private CarrinhoControle carrinhoControle;
 
@@ -131,6 +132,7 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
                             janelaAdicionarProduto.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int id) {
+
                                     valorTotalCompra(produtoSelecionado);
                                     Toast.makeText(ActivityCarrinhoCompra.this, produtoSelecionado.getNome()+" adicionado ao carrinho",Toast.LENGTH_SHORT).show();
                                     dialog.cancel();
@@ -184,42 +186,48 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
         this.buttonFinalizarCompra.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                /*
 
-                System.out.println(listProdutoCarrinho.size());
-                System.out.println(listProdutoCarrinho.get(0).getNome());
-                System.out.println(listProdutoCarrinho.get(0).getPrecoVenda());
-                System.out.println(listProdutoCarrinho.get(0).getQuantidade());
-                System.out.println(listProdutoCarrinho.get(0).getPrecoCompra());
-                System.out.println(listProdutoCarrinho.get(0).getFotoPrincipal());
-                ArrayList<Produto> lista = new ArrayList<>();
-                Produto produto = new Produto();
-                lista.add(produto);
-                //lista.add(produto);
-                //lista.add(produto);
-                */
                 Intent listaProdutos = new Intent(ActivityCarrinhoCompra.this, ActivityFinalizarCompra.class);
                 // passando a lista
                 listaProdutos.putExtra("lista",listProdutoCarrinho);
                 startActivity(listaProdutos);
-                /*
-                Intent i = new Intent(ActivityCarrinhoCompra.this, ActivityFinalizarCompra.class);
-                i.putExtra("nome", "Elias");
-                i.putExtra("sobrenome", "Lima");
-                i.putExtra("inteiro", 1299);
-                */
 
-                //startActivity(i);
             }
         });
     }
 
-    private void valorTotalCompra(Produto produto){
+    private void valorTotalCompra(Produto pSelecionado){
 
-        this.listProdutoCarrinho.add(produto);
-        valorCompra += produto.getPrecoVenda();
-        valorTotalItens = (TextView) findViewById(R.id.textViewTotalCompra);
-        valorTotalItens.setText(String.valueOf(valorCompra));
+        Produto pAdicionado = pSelecionado;
+
+        //Se o produto já estiver no carrinho adiciona só a quantidade
+        if(listProdutoCarrinho.contains(pAdicionado)){
+
+            //buscar no banco a quantidade do produto em estoque
+            final ProdutoControle produtoControle = new ProdutoControle(ConexaoSQLite.getInstancia(ActivityCarrinhoCompra.this));
+            this.produtoList = produtoControle.listarProdutoControle(pSelecionado.getNome());
+
+            //Verifica se a quantidade vendida não é maior que a quantidade do banco
+            if(produtoList.get(0).getQuantidade() > pAdicionado.getQuantidade()) {
+                pAdicionado.setQuantidade(pAdicionado.getQuantidade() + 1);
+                valorCompra += pAdicionado.getPrecoVenda();
+                valorTotalItens = (TextView) findViewById(R.id.textViewTotalCompra);
+                valorTotalItens.setText(String.valueOf(valorCompra));
+            }
+            else{
+                Toast.makeText(ActivityCarrinhoCompra.this, "Estoque Insuficiente!",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        //Se o produto ainda não estiver no carrinho
+        else{
+            pAdicionado.setQuantidade(1);
+            this.listProdutoCarrinho.add(pAdicionado);
+            valorCompra += pAdicionado.getPrecoVenda();
+            valorTotalItens = (TextView) findViewById(R.id.textViewTotalCompra);
+            valorTotalItens.setText(String.valueOf(valorCompra));
+        }
+
     }
 
 }
