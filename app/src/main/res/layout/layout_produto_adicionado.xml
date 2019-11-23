@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_tela_login_menor"
+    android:background="@color/colorPrimary"
     android:padding="@dimen/espaco_views_horizontal">
 
     <Space
@@ -29,8 +29,8 @@
 
         <ImageView
             android:id="@+id/imageViewProdutoAdicionado"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             
             />
         <Space
@@ -44,7 +44,7 @@
             android:layout_weight="1"
             android:textSize="@dimen/font_formulario"
             android:textStyle="bold"
-            android:gravity="center"
+            android:gravity="left"
             android:text="nome do produto"
             android:layout_gravity="center_vertical"
             android:layout_height="wrap_content"
