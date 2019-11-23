@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margem_tela_login">10dp</dimen>
-    <dimen name="margem_tela_menu">5dp</dimen>
+    <dimen name="margem_tela_menu">4dp</dimen>
     <dimen name="margem_tela_cadastro">1dp</dimen>
     <dimen name="box_formulario">50sp</dimen>
     <dimen name="espaco_formulario">5sp</dimen>
