@@ -22,9 +22,12 @@ import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 import com.uag.mybusiness.util.AdapterCarrinhoProdutos;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 public class ActivityCarrinhoCompra extends AppCompatActivity {
 
@@ -36,7 +39,6 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
     private AdapterCarrinhoProdutos adapterCarrinhoProdutos;
     private ArrayList<Produto> listProdutoCarrinho;
     private TextView valorTotalItens;
-    private int quantidadeProduto;
     private double valorCompra;
     private CarrinhoControle carrinhoControle;
 
@@ -67,6 +69,11 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
         this.buttonFinalizarCompra = (Button) findViewById(R.id.buttonFinalizarCompra);
 
         this.buttonBuscarProduto = (Button) findViewById(R.id.buttonBuscarProdutoCarrinho);
+
+        valorTotalItens = (TextView) findViewById(R.id.textViewTotalCompra);
+        valorTotalItens.setText("0,00");
+
+
 
         this.listViewProduto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -211,8 +218,7 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
             if(produtoList.get(0).getQuantidade() > pAdicionado.getQuantidade()) {
                 pAdicionado.setQuantidade(pAdicionado.getQuantidade() + 1);
                 valorCompra += pAdicionado.getPrecoVenda();
-                valorTotalItens = (TextView) findViewById(R.id.textViewTotalCompra);
-                valorTotalItens.setText(String.valueOf(valorCompra));
+                valorTotalItens.setText(formatarValorReal(valorCompra));
             }
             else{
                 Toast.makeText(ActivityCarrinhoCompra.this, "Estoque Insuficiente!",Toast.LENGTH_SHORT).show();
@@ -224,10 +230,19 @@ public class ActivityCarrinhoCompra extends AppCompatActivity {
             pAdicionado.setQuantidade(1);
             this.listProdutoCarrinho.add(pAdicionado);
             valorCompra += pAdicionado.getPrecoVenda();
-            valorTotalItens = (TextView) findViewById(R.id.textViewTotalCompra);
-            valorTotalItens.setText(String.valueOf(valorCompra));
+            valorTotalItens.setText(formatarValorReal(valorCompra));
         }
 
+    }
+
+    private String formatarValorReal(double valor){
+
+        double moeda = valor;
+        DecimalFormat formatoDois = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+        formatoDois.setMinimumFractionDigits(2);
+        formatoDois.setParseBigDecimal (true);
+
+        return formatoDois.format(moeda);
     }
 
 }

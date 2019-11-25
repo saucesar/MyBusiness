@@ -18,7 +18,10 @@ import com.uag.mybusiness.entidades.Produto;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Locale;
 
 public class AdapterCarrinhoProdutos extends BaseAdapter {
 
@@ -63,7 +66,7 @@ public class AdapterCarrinhoProdutos extends BaseAdapter {
 
         textViewNomeProduto.setText(String.valueOf(this.produtoList.get(posicao).getNome()));
         textViewQuantidade.setText(String.valueOf(this.produtoList.get(posicao).getQuantidade()));
-        textViewPrecoVenda.setText(String.valueOf(this.produtoList.get(posicao).getPrecoVenda()));
+        textViewPrecoVenda.setText(formatarValorReal(this.produtoList.get(posicao).getPrecoVenda()));
 
 
         return view;
@@ -74,6 +77,16 @@ public class AdapterCarrinhoProdutos extends BaseAdapter {
         this.produtoList.clear();
         this.produtoList = produtos;
         this.notifyDataSetChanged();
+    }
+
+    private String formatarValorReal(double valor){
+
+        double moeda = valor;
+        DecimalFormat formatoDois = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+        formatoDois.setMinimumFractionDigits(2);
+        formatoDois.setParseBigDecimal (true);
+
+        return formatoDois.format(moeda);
     }
 
 
