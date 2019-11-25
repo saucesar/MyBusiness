@@ -41,6 +41,8 @@
                 android:autofillHints=""
                 android:hint="@string/nome"
                 android:textSize="@dimen/font_formulario"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:background="@drawable/box_formulario_background"
                 android:inputType="textPersonName"/>
 
@@ -57,6 +59,8 @@
                 android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:background="@drawable/box_formulario_background"
                 android:inputType="numberSigned"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:hint="@string/formulario_quantidade"
                 android:textSize="@dimen/font_formulario" />
 
@@ -64,21 +68,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/espaco_formulario" />
 
-            <EditText
-                android:id="@+id/editTextEditDataEntradaProduto"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/box_formulario"
-                android:layout_marginTop="@dimen/margem_tela_cadastro"
-                android:layout_marginEnd="@dimen/margem_tela_cadastro"
-                android:layout_marginStart="@dimen/margem_tela_cadastro"
-                android:background="@drawable/box_formulario_background"
-                android:inputType="date"
-                android:hint="@string/formulario_data"
-                android:textSize="@dimen/font_formulario" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/espaco_formulario" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -92,6 +81,9 @@
                     android:layout_marginTop="@dimen/margem_tela_cadastro"
                     android:layout_marginEnd="@dimen/margem_tela_cadastro"
                     android:layout_marginStart="@dimen/margem_tela_cadastro"
+                    android:maxLength="7"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:background="@drawable/box_formulario_background"
                     android:hint="@string/formulario_preco_compra"
                     android:inputType="numberDecimal"
@@ -106,10 +98,12 @@
                     android:layout_marginTop="@dimen/margem_tela_cadastro"
                     android:layout_marginEnd="@dimen/margem_tela_cadastro"
                     android:autofillHints=""
+                    android:maxLength="7"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:background="@drawable/box_formulario_background"
                     android:inputType="numberDecimal"
                     android:hint="@string/formulario_preco_venda"
-                    android:maxLength="4"
                     android:textSize="@dimen/font_formulario" />
 
 
@@ -127,6 +121,9 @@
                 android:layout_marginTop="@dimen/margem_tela_cadastro"
                 android:layout_marginEnd="@dimen/margem_tela_cadastro"
                 android:layout_marginStart="@dimen/margem_tela_cadastro"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="top"
                 android:background="@drawable/box_formulario_background"
                 android:inputType="textWebEditText"
                 android:hint="@string/formulario_descricao"
@@ -145,6 +142,8 @@
                 android:layout_marginStart="@dimen/margem_tela_cadastro"
                 android:background="@drawable/box_formulario_background"
                 android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:hint="@string/formulario_url_principal"
                 android:textSize="@dimen/font_formulario" />
 
@@ -162,6 +161,8 @@
                 android:background="@drawable/box_formulario_background"
                 android:hint="@string/formulario_url_secundaria"
                 android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:textSize="@dimen/font_formulario" />
 
             <Space
@@ -173,6 +174,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/checkboxEditAtivo"
                 android:text="Ativo"
+                android:buttonTint="@color/color_box_formulario"
                 android:textColor="@color/fontTelaLogin"/>
 
         </LinearLayout>

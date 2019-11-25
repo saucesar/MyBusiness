@@ -64,7 +64,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:drawableTop="@drawable/venda_24"
-            android:text="@string/venda"
+            android:text="@string/carrinho"
             android:textSize="40px"
             android:textStyle="bold"
             android:textColor="@color/color_menu"

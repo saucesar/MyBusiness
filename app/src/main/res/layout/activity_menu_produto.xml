@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="@dimen/margem_tela_menu"
+    android:background="@color/color_background_carrinho"
     tools:context=".activities.ActivityMenuProduto">
 
     <LinearLayout
@@ -18,18 +19,23 @@
         <EditText
             android:id="@+id/editTextBuscarProduto"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:autofillHints=""
-            android:background="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/box_formulario_background"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="22sp"
             tools:targetApi="o" />
 
+        <Space
+            android:layout_width="@dimen/espaco_views_horizontal"
+            android:layout_height="10dp" />
+
         <Button
             android:id="@+id/buttonBuscarProduto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
             android:background="@drawable/button_background"
             android:text="@string/buscar" />
 
