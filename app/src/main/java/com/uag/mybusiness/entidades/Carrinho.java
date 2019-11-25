@@ -51,6 +51,7 @@ public class Carrinho {
         this.totalCompra = totalCompra;
     }
 
+    public List<Produto> getListaProdutos(){return this.listaProdutos;}
 
     public List<Produto> adicionarProdutoCarrinho(Produto produto){
         listaProdutos.add(produto);
