@@ -92,8 +92,8 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
                         "("+
                         "id INTEGER PRIMARY KEY autoincrement,"+
                         "data TEXT,"+
-                        "id_cliente INTEGER,"+
-                        "totalCompra REAL"+
+                        "totalCompra REAL,"+
+                        "id_cliente INTEGER, FOREIGN KEY (id_cliente) REFERENCES clientes(id)"+
                         ")";
 
         sqLiteDatabase.execSQL(sqLiteTabelaCarrinho);

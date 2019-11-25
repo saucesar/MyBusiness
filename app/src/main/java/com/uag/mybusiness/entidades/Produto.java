@@ -40,6 +40,20 @@ public class Produto implements Serializable {
         this.ativo = ativo;
     }
 
+    public Produto(int id,String nome, int quantidade, String dataEntrada, double precoCompra,double precoVenda, String descricao,
+            String fotoPrincipal, String fotoSecundaria, int ativo){
+        this.id = id;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.dataEntrada = dataEntrada;
+        this.precoCompra = precoCompra;
+        this.precoVenda = precoVenda;
+        this.descricao = descricao;
+        this.fotoPrincipal = fotoPrincipal;
+        this.fotoSecundaria = fotoSecundaria;
+        this.ativo = ativo;
+    }
+
     public int getId() {
         return id;
     }
