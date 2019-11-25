@@ -15,12 +15,17 @@ import com.uag.mybusiness.controller.ProdutoControle;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
+
 public class ActivityCadastrarProduto extends AppCompatActivity {
 
     private EditText editTextIdProduto;
     private EditText editTextNomeProduto;
     private EditText editTextQuantidadeProduto;
-    private EditText editTextDataEntradaProduto;
     private EditText editTextPrecoCompra;
     private EditText editTextPrecoVenda;
     private EditText editTextDescricao;
@@ -38,7 +43,6 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
 
         editTextNomeProduto = (EditText) findViewById(R.id.editTextNomeProduto);
         editTextQuantidadeProduto = (EditText) findViewById(R.id.editTextQuantidadeProduto);
-        editTextDataEntradaProduto = (EditText) findViewById(R.id.editTextDataEntradaProduto);
         editTextPrecoCompra = (EditText) findViewById(R.id.editTextPrecoCompra);
         editTextPrecoVenda = (EditText) findViewById(R.id.editTextPrecoVenda);
         editTextDescricao = (EditText) findViewById(R.id.editTextDescricao);
@@ -75,9 +79,17 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
 
         private Produto dadosFormularioProduto(){
 
+            Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+
+            int month = calendar.get(Calendar.MONTH);
+            int year = calendar.get(Calendar.YEAR);
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+
             this.produto = new Produto();
 
-            if(this.editTextNomeProduto.getText().toString().isEmpty() == false){
+            if(this.editTextNomeProduto.getText().toString().isEmpty() == false &&(
+                    this.editTextNomeProduto.getText().toString().length() > 3
+                    )){
                 this.produto.setNome(this.editTextNomeProduto.getText().toString());
             }else{
                 return null;
@@ -90,11 +102,7 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
                 return null;
             }
 
-            if(this.editTextDataEntradaProduto.getText().toString().isEmpty() == false){
-                this.produto.setDataEntrada(this.editTextDataEntradaProduto.getText().toString());
-            }else{
-                return null;
-            }
+            this.produto.setDataEntrada(day + "/" + month +"/" + year);
 
             if(this.editTextPrecoCompra.getText().toString().isEmpty() == false){
                 double precoCompra = Double.parseDouble(this.editTextPrecoCompra.getText().toString());
@@ -128,4 +136,6 @@ public class ActivityCadastrarProduto extends AppCompatActivity {
 
             return produto;
         }
+
+
 }

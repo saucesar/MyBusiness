@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Produto implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int id;
     private String nome;
     private int quantidade;
@@ -134,8 +135,9 @@ public class Produto implements Serializable {
         this.fotoSecundaria = fotoSecundaria;
     }
 
+
     @Override
     public String toString(){
-        return this.nome;
+        return this.nome + " Quantidade: "+getQuantidade() +" Preco: "+ getQuantidade()* getPrecoVenda();
     }
 }

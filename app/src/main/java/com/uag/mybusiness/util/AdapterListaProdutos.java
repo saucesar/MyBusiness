@@ -19,7 +19,10 @@ import com.uag.mybusiness.entidades.Produto;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Locale;
 
 public class AdapterListaProdutos extends BaseAdapter {
 
@@ -68,8 +71,8 @@ public class AdapterListaProdutos extends BaseAdapter {
         textViewNomeProduto.setText(String.valueOf(this.produtoList.get(posicao).getNome()));
         textViewQuantidadeProduto.setText(String.valueOf(this.produtoList.get(posicao).getQuantidade()));
         textViewDataEntrada.setText(String.valueOf(this.produtoList.get(posicao).getDataEntrada()));
-        textViewPrecoCompra.setText(String.valueOf(this.produtoList.get(posicao).getPrecoCompra()));
-        textViewPrecoVenda.setText(String.valueOf(this.produtoList.get(posicao).getPrecoVenda()));
+        textViewPrecoCompra.setText(formatarValorReal(this.produtoList.get(posicao).getPrecoCompra()));
+        textViewPrecoVenda.setText(formatarValorReal(this.produtoList.get(posicao).getPrecoVenda()));
         textViewDescricao.setText(String.valueOf(this.produtoList.get(posicao).getDescricao()));
 
         String URL1 = String.valueOf(this.produtoList.get(posicao).getFotoPrincipal());
@@ -77,7 +80,6 @@ public class AdapterListaProdutos extends BaseAdapter {
         imagem1.setImageBitmap(DownloadImage(URL1));
 
         String URL2 = String.valueOf(this.produtoList.get(posicao).getFotoSecundaria());
-        Log.d("Erro..................", URL2);
         ImageView imagem2 = (ImageView)view.findViewById(R.id.imageViewLayoutFotoSecundaria);
         imagem2.setImageBitmap(DownloadImage(URL2));
 
@@ -89,6 +91,16 @@ public class AdapterListaProdutos extends BaseAdapter {
         this.produtoList.clear();
         this.produtoList = produtos;
         this.notifyDataSetChanged();
+    }
+
+    private String formatarValorReal(double valor){
+
+        double moeda = valor;
+        DecimalFormat formatoDois = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+        formatoDois.setMinimumFractionDigits(2);
+        formatoDois.setParseBigDecimal (true);
+
+        return formatoDois.format(moeda);
     }
 
     @SuppressLint("NewApi")
@@ -119,7 +131,6 @@ public class AdapterListaProdutos extends BaseAdapter {
         }
         catch(Exception ex){
             Log.e("Exception",ex.toString());
-            Log.d("Erro..................","Nao conectou");
         }
 
         return null;
