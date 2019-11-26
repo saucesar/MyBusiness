@@ -90,10 +90,17 @@ public class ActivityCadastrarCliente extends AppCompatActivity {
         String bairro = editTextBairro.getText().toString();
         String cidade = editTextCidade.getText().toString();
         String estado = editTextEstado.getText().toString();
-        int idCliente = ActivityCadastrarCliente.cliente.getId();
-        int idEndereco = ActivityCadastrarCliente.cliente.getEndereco().getId();
+        Cliente cliente;
+        if(ActivityCadastrarCliente.cliente != null){
+            int idCliente = ActivityCadastrarCliente.cliente.getId();
+            int idEndereco = ActivityCadastrarCliente.cliente.getEndereco().getId();
+            cliente = new Cliente(idCliente,nome,cpf,new Endereco(idEndereco,rua,numero,bairro,cidade,estado,cpf));
+        }
+        else{
+            cliente = new Cliente(nome,cpf,new Endereco(rua,numero,bairro,cidade,estado,cpf));
+        }
 
-        return new Cliente(idCliente,nome,cpf,new Endereco(idEndereco,rua,numero,bairro,cidade,estado,cpf));
+        return cliente;
     }
 
     private boolean clienteValido(Cliente cliente){

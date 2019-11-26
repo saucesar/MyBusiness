@@ -19,6 +19,11 @@ public class Carrinho {
         this.totalCompra = 0;
     }
 
+    public void setListaProdutos(List<Produto> produtos){
+        this.listaProdutos = produtos;
+        for(Produto p:this.listaProdutos){this.totalCompra += p.getPrecoVenda();}
+    }
+
     public int getId() {
         return id;
     }
