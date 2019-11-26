@@ -11,6 +11,6 @@
     <color name="color_menu">#04027B</color>
     <color name="color_font_formulario">#fff</color>
     <color name="color_hint_formulario">#050101</color>
-    <color name="color_box_formulario">#fff</color>
+    <color name="color_box_formulario">#FFFFFF</color>
     <color name="color_background_carrinho">#061B53</color>
 </resources>

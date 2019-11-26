@@ -16,13 +16,17 @@ import com.uag.mybusiness.controller.ProdutoControle;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Produto;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 public class ActivityEditarProduto extends AppCompatActivity {
 
 
     private int idProduto;
     private EditText edtNome;
     private EditText edtQuantidade;
-    private EditText edtDataEntrada;
+    private String dataEntrada;
     private EditText edtPrecoCompra;
     private EditText edtPrecoVenda;
     private EditText edtDescricao;
@@ -39,7 +43,7 @@ public class ActivityEditarProduto extends AppCompatActivity {
 
         this.edtNome = (EditText)findViewById(R.id.editTextEditNomeProduto);
         this.edtQuantidade = (EditText)findViewById(R.id.editTextEditQuantidadeProduto);
-        this.edtDataEntrada = (EditText)findViewById(R.id.editTextEditDataEntradaProduto);
+
         this.edtPrecoCompra = (EditText)findViewById(R.id.editTextEditPrecoCompra);
         this.edtPrecoVenda = (EditText)findViewById(R.id.editTextEditPrecoVenda);
         this.edtDescricao = (EditText)findViewById(R.id.editTextEditDescricao);
@@ -65,15 +69,16 @@ public class ActivityEditarProduto extends AppCompatActivity {
         produto.setFotoPrincipal(editarProduto.getString("foto_principal"));
         produto.setFotoSecundaria(editarProduto.getString("foto_secundaria"));
 
+
         this.setEditTextEditarProduto(produto);
     }
 
     private void setEditTextEditarProduto(Produto produto){
         this.edtNome.setText(produto.getNome());
         this.edtQuantidade.setText(String.valueOf(produto.getQuantidade()));
-        this.edtDataEntrada.setText(produto.getDataEntrada());
-        this.edtPrecoCompra.setText(String.valueOf(produto.getPrecoCompra()));
-        this.edtPrecoVenda.setText(String.valueOf(produto.getPrecoVenda()));
+        this.dataEntrada = produto.getDataEntrada();
+        this.edtPrecoCompra.setText(formatarValorReal(produto.getPrecoCompra()));
+        this.edtPrecoVenda.setText(formatarValorReal(produto.getPrecoVenda()));
         this.edtDescricao.setText(produto.getDescricao());
         this.edtFotoPrincipal.setText(produto.getFotoPrincipal());
         this.edtFotoSecundaria.setText(produto.getFotoSecundaria());
@@ -85,7 +90,9 @@ public class ActivityEditarProduto extends AppCompatActivity {
 
         this.produto.setId(idProduto);
 
-        if(this.edtNome.getText().toString().isEmpty() == false){
+        if(this.edtNome.getText().toString().isEmpty() == false  &&(
+                this.edtNome.getText().toString().length() > 3
+        )){
             this.produto.setNome(this.edtNome.getText().toString());
         }else{
             return null;
@@ -98,21 +105,17 @@ public class ActivityEditarProduto extends AppCompatActivity {
             return null;
         }
 
-        if(this.edtDataEntrada.getText().toString().isEmpty() == false){
-            this.produto.setDataEntrada(this.edtDataEntrada.getText().toString());
-        }else{
-            return null;
-        }
+        this.produto.setDataEntrada(this.dataEntrada);
 
         if(this.edtPrecoCompra.getText().toString().isEmpty() == false){
-            double precoCompra = Double.parseDouble(this.edtPrecoCompra.getText().toString());
+            double precoCompra = Double.parseDouble(formatarRealDouble(this.edtPrecoCompra.getText().toString()));
             this.produto.setPrecoCompra(precoCompra);
         }else{
             return null;
         }
 
         if(this.edtPrecoVenda.getText().toString().isEmpty() == false){
-            double precoVenda = Double.parseDouble(this.edtPrecoVenda.getText().toString());
+            double precoVenda = Double.parseDouble(formatarRealDouble(this.edtPrecoVenda.getText().toString()));
             this.produto.setPrecoVenda(precoVenda);
         }else{
             return null;
@@ -171,6 +174,27 @@ public class ActivityEditarProduto extends AppCompatActivity {
             }
 
         });
+    }
+
+    private String formatarValorReal(double valor){
+
+        double moeda = valor;
+        DecimalFormat formatoDois = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+        formatoDois.setMinimumFractionDigits(2);
+        formatoDois.setParseBigDecimal (true);
+
+        return formatoDois.format(moeda);
+    }
+
+    private String formatarRealDouble(String valor){
+
+        if(valor.contains(",")){
+            String semPonto = valor.replace(".", "");
+            String semVirgula = semPonto.replace(",",".");
+            return semVirgula;
+        }
+
+        return valor;
     }
 
 

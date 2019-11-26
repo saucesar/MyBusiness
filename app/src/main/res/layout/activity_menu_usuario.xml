@@ -5,34 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/color_menu"
     android:layout_margin="@dimen/margem_tela_menu"
     tools:context=".activities.ActivityMenuUsuario">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonCadastrarUsuario"
+        <EditText
+            android:id="@+id/editTextbuscarUsuario"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:textColor="@color/color_menu"
-            android:textStyle="bold"
-            android:text="@string/cadastrar" />
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/box_formulario_background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="22sp"
+            tools:targetApi="o" />
+
+        <Space
+            android:layout_width="@dimen/espaco_views_horizontal"
+            android:layout_height="10dp" />
 
         <Button
-            android:id="@+id/buttonConsultarUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:textColor="@color/color_menu"
-            android:textStyle="bold"
+            android:id="@+id/buttonBuscar"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_background"
             android:text="@string/buscar" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/listViewUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp" />
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/buttonAddUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/formulario_adicionar_produto"
+        app:srcCompat="@drawable/ic_add_circle_black_24dp"
+        android:layout_gravity="center|bottom"/>
 
 
 </LinearLayout>

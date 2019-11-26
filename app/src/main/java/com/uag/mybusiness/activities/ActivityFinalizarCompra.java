@@ -24,8 +24,11 @@ import com.uag.mybusiness.entidades.Produto;
 import com.uag.mybusiness.util.AdapterClienteCarrinho;
 import com.uag.mybusiness.util.AdapterProdutosCarrinho;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ActivityFinalizarCompra extends AppCompatActivity {
 
@@ -85,7 +88,7 @@ public class ActivityFinalizarCompra extends AppCompatActivity {
                         adapterProdutosCarrinho.removerProduto(posicao);
 
                         // atualiza o valor da compra
-                        valorTotalCompra.setText(String.valueOf(valorCompra(produtoList)));
+                        valorTotalCompra.setText(formatarValorReal(valorCompra(produtoList)));
                     }
                 });
 
@@ -101,7 +104,7 @@ public class ActivityFinalizarCompra extends AppCompatActivity {
         //this.listViewClientes.setAdapter(this.adapterClienteCarrinho);
 
         // atualiza o valor da compra
-        this.valorTotalCompra.setText(String.valueOf(valorCompra(produtoList)));
+        this.valorTotalCompra.setText(formatarValorReal(valorCompra(produtoList)));
 
         this.buttonComprar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -148,6 +151,16 @@ public class ActivityFinalizarCompra extends AppCompatActivity {
             valor += produtoList.get(i).getQuantidade() * produtoList.get(i).getPrecoVenda();
         }
         return valor;
+    }
+
+    private String formatarValorReal(double valor){
+
+        double moeda = valor;
+        DecimalFormat formatoDois = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+        formatoDois.setMinimumFractionDigits(2);
+        formatoDois.setParseBigDecimal (true);
+
+        return formatoDois.format(moeda);
     }
 
 }

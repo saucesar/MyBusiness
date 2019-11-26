@@ -23,7 +23,7 @@
 
     <string name="produto">Produto</string>
     <string name="cliente">Cliente</string>
-    <string name="venda">Venda</string>
+    <string name="carrinho">Carrinho</string>
     <string name="usuarios">Usuários</string>
     <string name="relatorio">Relatório</string>
     <string name="formulario_nome">Nome do Produto</string>

@@ -47,18 +47,23 @@
         <EditText
             android:id="@+id/editTextBuscarClienteCarrinho"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:autofillHints=""
-            android:background="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/box_formulario_background"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="22sp"
             tools:targetApi="o" />
 
+        <Space
+            android:layout_width="@dimen/espaco_views_horizontal"
+            android:layout_height="10dp" />
+
         <Button
             android:id="@+id/buttonBuscarClienteCarrinho"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
             android:background="@drawable/button_background"
             android:text="@string/cliente" />
 
