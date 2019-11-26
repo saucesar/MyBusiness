@@ -29,6 +29,8 @@ public class UsuarioControle{
         return usuarioDados.atualizar(user);
     }
 
+    public Usuario buscarPorLogin(String login){return usuarioDados.buscarUsuario(login);}
+
     public boolean autenticar(String login, String senha){
         return usuarioDados.autenticar(login,senha);
     }

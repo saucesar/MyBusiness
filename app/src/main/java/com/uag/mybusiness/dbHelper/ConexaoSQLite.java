@@ -71,10 +71,11 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
         String sqlUsuario =
                 "CREATE TABLE IF NOT EXISTS " +
                         "usuarios(id INTEGER PRIMARY KEY autoincrement, " +
-                        "login TEXT, senha TEXT, lembrar INTEGER)";
+                        "login TEXT, senha TEXT, lembrar INTEGER, tipo INTEGER)";
 
         sqLiteDatabase.execSQL(sqlUsuario);
         criarAdmin(sqLiteDatabase);
+        criarFuncionario(sqLiteDatabase);
     }
 
     public void criarAdmin(SQLiteDatabase sqLiteDatabase){
@@ -82,8 +83,21 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
         adminValues.put("login","admin");
         adminValues.put("senha","admin");
         adminValues.put("lembrar",0);
+        adminValues.put("tipo",1);
 
         sqLiteDatabase.insert("usuarios",null,adminValues);
+    }
+
+    private void criarFuncionario(SQLiteDatabase db){
+        ContentValues funcValues = new ContentValues();
+        funcValues.put("login","func");
+        funcValues.put("senha","func");
+        funcValues.put("lembrar",0);
+        funcValues.put("tipo",0);
+
+        db.insert("usuarios",null,funcValues);
+
+        return ;
     }
 
     public void criarTabelaCarrinhos(SQLiteDatabase sqLiteDatabase){

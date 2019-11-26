@@ -10,4 +10,5 @@ public interface IDadosUsuario {
     boolean excluir(int id);
     boolean atualizar(Usuario user);
     boolean autenticar(String login, String senha);
+    Usuario buscarUsuario(String login);
 }

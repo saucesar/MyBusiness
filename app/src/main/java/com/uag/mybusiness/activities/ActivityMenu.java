@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.uag.mybusiness.R;
+import com.uag.mybusiness.entidades.Usuario;
 
 public class ActivityMenu extends AppCompatActivity {
 
@@ -16,6 +17,11 @@ public class ActivityMenu extends AppCompatActivity {
     private Button buttonCliente;
     private Button buttonUsuario;
     private Button buttonRelatorio;
+
+    private static Usuario user;
+
+    public static Usuario getUser(){return user;}
+    public static void setUser(Usuario usuario){user = usuario;}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,15 @@ public class ActivityMenu extends AppCompatActivity {
         this.buttonCliente = (Button) findViewById(R.id.buttonCliente);
         this.buttonUsuario = (Button) findViewById(R.id.buttonUsuario);
         this.buttonRelatorio = (Button) findViewById(R.id.buttonRelatorio);
+
+        if(user.getTipo().ordinal() == 0){
+            this.ButtonProduto.setEnabled(false);
+            this.ButtonProduto.setVisibility(View.INVISIBLE);
+            this.buttonUsuario.setEnabled(false);
+            this.buttonUsuario.setVisibility(View.INVISIBLE);
+            this.buttonRelatorio.setEnabled(false);
+            this.buttonRelatorio.setVisibility(View.INVISIBLE);
+        }
 
         this.ButtonProduto.setOnClickListener(new View.OnClickListener(){
             @Override

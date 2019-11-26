@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
+import com.uag.mybusiness.entidades.EnumUser;
 import com.uag.mybusiness.entidades.Usuario;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class UsuarioDados implements IDadosUsuario{
             userValues.put("login",user.getLogin());
             userValues.put("senha",user.getSenha());
             userValues.put("lembrar",user.getLembrar());
+            userValues.put("tipo",user.getTipo().ordinal());
 
             long result = db.insert(TABELA_USUARIOS,null,userValues);
             status = result > 0;
@@ -57,8 +59,9 @@ public class UsuarioDados implements IDadosUsuario{
                 String login  = cursorUser.getString(1);
                 String senha  = cursorUser.getString(2);
                 boolean lembrar = cursorUser.getInt(3) != 0;
+                int tipo = cursorUser.getInt(4);
 
-                usuarios.add(new Usuario(id, login, senha, lembrar));
+                usuarios.add(new Usuario(id, login, senha, lembrar, EnumUser.valueOf(tipo)));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -99,6 +102,7 @@ public class UsuarioDados implements IDadosUsuario{
             userValues.put("login",user.getLogin());
             userValues.put("senha",user.getSenha());
             userValues.put("lembrar",user.getLembrar());
+            userValues.put("tipo",user.getTipo().ordinal());
 
             String whereUser = "id = "+user.getId();
 
@@ -121,6 +125,7 @@ public class UsuarioDados implements IDadosUsuario{
         return bool;
     }
 
+    @Override
     public Usuario buscarUsuario(String login){
         Cursor cursorUser;
         String queryUser = "SELECT * FROM "+TABELA_USUARIOS + " WHERE login = ?";
@@ -136,8 +141,9 @@ public class UsuarioDados implements IDadosUsuario{
                 int id = cursorUser.getInt(0);
                 String senha  = cursorUser.getString(2);
                 boolean lembrar = cursorUser.getInt(3) != 0;
+                int tipo = cursorUser.getInt(4);
 
-                user = new Usuario(id, login, senha, lembrar);
+                user = new Usuario(id, login, senha, lembrar, EnumUser.valueOf(tipo));
             }
         }catch (Exception e){
             e.printStackTrace();
