@@ -61,7 +61,7 @@
                 android:autofillHints=""
                 android:background="@drawable/box_formulario_background"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="numberSigned"
                 android:hint="@string/cpf"
                 android:textSize="@dimen/font_formulario"
                 tools:targetApi="o" />

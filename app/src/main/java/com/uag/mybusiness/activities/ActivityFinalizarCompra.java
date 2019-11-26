@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.uag.mybusiness.R;
+import com.uag.mybusiness.controller.CarrinhoControle;
 import com.uag.mybusiness.controller.ClienteControle;
 import com.uag.mybusiness.dbHelper.ConexaoSQLite;
 import com.uag.mybusiness.entidades.Carrinho;
@@ -44,6 +45,7 @@ public class ActivityFinalizarCompra extends AppCompatActivity {
     private ListView listViewClientes;
     private AdapterClienteCarrinho adapterClienteCarrinho;
     private ClienteControle clienteControle;
+    private CarrinhoControle carrinhoControle;
 
 
     @Override
@@ -110,6 +112,18 @@ public class ActivityFinalizarCompra extends AppCompatActivity {
                 //Chama a janela produto
 
                 Carrinho carrinhoComprado = new Carrinho();
+                carrinhoComprado.setListaProdutos(produtoList);
+                String cpf = buscarCliente.getText().toString();
+                for(Cliente c : clienteList){
+                    if(c.getCpf().equals(cpf)){
+                        carrinhoComprado.setCliente(c);
+                        break;
+                    }
+                }
+
+                carrinhoControle = new CarrinhoControle(ConexaoSQLite.getInstancia(ActivityFinalizarCompra.this));
+
+                carrinhoControle.salvarCarrinhoControle(carrinhoComprado);
 
                 /*
                 *   salva os valores do carrinho

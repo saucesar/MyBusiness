@@ -3,13 +3,13 @@
   <component name="SQLAndroidSettings">
     <option name="databases">
       <map>
-        <entry key="data_C:\Users\sauce\AndroidStudioProjects\MyBusiness\AndroidSqlEditorDatabases\">
+        <entry key="db_C:\Users\sauce\AndroidStudioProjects\MyBusiness\AndroidSqlEditorDatabases\">
           <value>
             <list>
               <option value="emulator-5554" />
               <option value="/databases/banco_dados_business" />
-              <option value="data" />
-              <option value="data" />
+              <option value="db" />
+              <option value="db" />
               <option value="false" />
             </list>
           </value>

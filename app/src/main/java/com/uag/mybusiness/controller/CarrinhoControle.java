@@ -9,17 +9,13 @@ import java.util.List;
 
 public class CarrinhoControle {
     private final CarrinhoDados carrinhoDados;
-    private Carrinho carrinho;
 
 
-
-    public CarrinhoControle(ConexaoSQLite nConexaoSQLite, CarrinhoDados carrinhoDados){
-        this.carrinhoDados = carrinhoDados;
-        carrinhoDados = new CarrinhoDados(nConexaoSQLite);
+    public CarrinhoControle(ConexaoSQLite nConexaoSQLite){
+        this.carrinhoDados = new CarrinhoDados(nConexaoSQLite);
     }
 
-
-    public int salvarClienteControle(Carrinho carrinho){
+    public int salvarCarrinhoControle(Carrinho carrinho){
         return this.carrinhoDados.inserir(carrinho);
     }
 
@@ -27,15 +23,11 @@ public class CarrinhoControle {
         return this.carrinhoDados.listarCarrinho();
     }
 
-    public boolean excluirClienteControle(String idCarrinho){
+    public boolean excluirCarrinhoControle(int idCarrinho){
         return this.carrinhoDados.excluir(idCarrinho);
     }
 
     public boolean atualizarCarrinhoControle(Carrinho carrinho){
         return this.carrinhoDados.atualizar(carrinho);
-    }
-
-    public List<Produto> adionarProdutoCarrinhoControle(Produto produto){
-        return carrinho.adicionarProdutoCarrinho(produto);
     }
 }
